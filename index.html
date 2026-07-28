@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Commission Calculator — Schedule A</title>
+  <meta name="description" content="Real-time commission tracker following Schedule A, effective 01/01/2025.">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%A7%AE</text></svg>">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-left">
+    <h1>Commission Calculator</h1>
+    <span class="schedule-tag" id="scheduleTag"></span>
+  </div>
+  <div class="topbar-right">
+    <label class="period-picker">
+      <span class="sr-only">Sales month</span>
+      <select id="periodSelect" aria-label="Sales month"></select>
+    </label>
+    <span class="save-state" id="saveState" role="status" aria-live="polite">Saved</span>
+    <button type="button" class="icon-btn" id="settingsBtn" aria-label="Settings">Settings</button>
+  </div>
+</header>
+
+<main>
+  <!-- ============ Dashboard ============ -->
+  <section class="dashboard" aria-label="Sales month summary">
+    <div class="period-meta">
+      <span id="periodRange"></span>
+      <span id="periodPay"></span>
+      <span id="periodCount"></span>
+    </div>
+
+    <div class="tiles">
+      <div class="tile tile-primary">
+        <span class="tile-label">Total payout this month</span>
+        <span class="tile-value" id="statPayout">$0</span>
+        <span class="tile-sub" id="statPayoutSub">Commissions + bonuses</span>
+      </div>
+      <div class="tile">
+        <span class="tile-label">Commissions</span>
+        <span class="tile-value" id="statCommission">$0</span>
+        <span class="tile-sub" id="statCommissionSub">0 contracts</span>
+      </div>
+      <div class="tile">
+        <span class="tile-label">Bonuses</span>
+        <span class="tile-value" id="statBonus">$0</span>
+        <span class="tile-sub" id="statBonusSub">No bonus tier reached</span>
+      </div>
+      <div class="tile">
+        <span class="tile-label">Land sale bonus</span>
+        <span class="tile-value" id="statLand">$0</span>
+        <span class="tile-sub" id="statLandSub">0 of 3 contracts</span>
+      </div>
+    </div>
+
+    <div class="progress-pair">
+      <div class="progress-card">
+        <div class="progress-head">
+          <span class="progress-title">Cemetery pre need volume</span>
+          <span class="progress-amount" id="cemVolume">$0</span>
+        </div>
+        <div class="meter" id="cemMeter" role="img" aria-label="Cemetery volume toward bonus tiers">
+          <div class="meter-fill" id="cemFill"></div>
+          <span class="meter-mark" style="left:40%"></span>
+          <span class="meter-mark" style="left:60%"></span>
+        </div>
+        <div class="meter-scale"><span>$0</span><span>$20k · 1%</span><span>$30k · 2%</span><span>$50k · 3%</span></div>
+        <p class="progress-note" id="cemNote">No bonus tier reached yet.</p>
+      </div>
+
+      <div class="progress-card">
+        <div class="progress-head">
+          <span class="progress-title">Funeral pre need volume <small>(insurance + trust)</small></span>
+          <span class="progress-amount" id="funVolume">$0</span>
+        </div>
+        <div class="meter" id="funMeter" role="img" aria-label="Funeral volume toward bonus tiers">
+          <div class="meter-fill" id="funFill"></div>
+          <span class="meter-mark" style="left:55.554%"></span>
+          <span class="meter-mark" style="left:77.778%"></span>
+        </div>
+        <div class="meter-scale"><span>$0</span><span>$24,999 · 1%</span><span>$35k · 1.5%</span><span>$45k · 2%</span></div>
+        <p class="progress-note" id="funNote">No bonus tier reached yet.</p>
+      </div>
+    </div>
+
+    <div class="alerts" id="alerts" hidden></div>
+  </section>
+
+  <div class="columns">
+    <!-- ============ Entry form ============ -->
+    <section class="panel entry" aria-label="Add or edit a sale">
+      <div class="panel-head">
+        <h2 id="entryTitle">New sale</h2>
+        <button type="button" class="link-btn" id="cancelEdit" hidden>Cancel edit</button>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Commission type">
+        <button type="button" role="tab" class="tab is-active" data-category="cemetery" aria-selected="true">Cemetery</button>
+        <button type="button" role="tab" class="tab" data-category="insurance" aria-selected="false">Insurance</button>
+        <button type="button" role="tab" class="tab" data-category="trust" aria-selected="false">PN Trust</button>
+      </div>
+
+      <form id="saleForm" autocomplete="off">
+        <div class="field-row">
+          <label class="field">
+            <span>Contract # <small>(reconcile w/ HMIS)</small></span>
+            <input type="text" id="fContractNo" placeholder="Optional">
+          </label>
+          <label class="field">
+            <span>Purchaser name</span>
+            <input type="text" id="fCustomer" placeholder="Optional">
+          </label>
+        </div>
+        <label class="field">
+          <span>Contract date</span>
+          <input type="date" id="fDate" required>
+        </label>
+        <p class="field-hint" id="dateHint"></p>
+
+        <!-- ---- Cemetery ---- -->
+        <fieldset class="cat-fields" data-cat="cemetery">
+          <legend class="sr-only">Cemetery contract</legend>
+
+          <div class="field-row">
+            <label class="field">
+              <span>Down payment $</span>
+              <input type="text" inputmode="decimal" id="fDown" placeholder="0.00">
+            </label>
+            <label class="field">
+              <span>Term (months)</span>
+              <input type="text" inputmode="numeric" id="fTerm" placeholder="0 = paid in full">
+            </label>
+          </div>
+          <div class="check-row">
+            <label class="check"><input type="checkbox" id="fAtNeed"> At need</label>
+            <label class="check"><input type="checkbox" id="fHasAch"> ACH / bank draft</label>
+          </div>
+
+          <label class="field">
+            <span>Financing option</span>
+            <select id="fFinancing"></select>
+          </label>
+          <p class="field-hint" id="financingHint"></p>
+
+          <div class="amounts">
+            <div class="amounts-head">Volume</div>
+            <div class="amount-grid">
+              <label class="field"><span>Property — ground $</span><input type="text" inputmode="decimal" id="aGround" placeholder="0.00"></label>
+              <label class="field"><span>Property — crypt $</span><input type="text" inputmode="decimal" id="aCrypt" placeholder="0.00"></label>
+              <label class="field"><span>Property — niche $</span><input type="text" inputmode="decimal" id="aNiche" placeholder="0.00"></label>
+              <label class="field"><span>Other cemetery $</span><input type="text" inputmode="decimal" id="aOther" placeholder="0.00"></label>
+              <label class="field"><span>O&amp;C amount $</span><input type="text" inputmode="decimal" id="aOc" placeholder="0.00"></label>
+              <label class="field"><span>Undesigned mdse $ <small>(−5%)</small></span><input type="text" inputmode="decimal" id="aUndesigned" placeholder="0.00"></label>
+              <label class="field"><span>Unlined vault $ <small>(0%)</small></span><input type="text" inputmode="decimal" id="aVault" placeholder="0.00"></label>
+            </div>
+          </div>
+
+          <div class="check-row">
+            <label class="check"><input type="checkbox" id="fRelative"> Sale to a relative <small>(no land bonus)</small></label>
+          </div>
+        </fieldset>
+
+        <!-- ---- Insurance ---- -->
+        <fieldset class="cat-fields" data-cat="insurance" hidden>
+          <legend class="sr-only">Insurance policy</legend>
+          <div class="field-row">
+            <label class="field">
+              <span>Age on date of issue</span>
+              <input type="text" inputmode="numeric" id="iAge" placeholder="0">
+            </label>
+            <label class="field">
+              <span>Product</span>
+              <select id="iProduct"></select>
+            </label>
+          </div>
+          <label class="field">
+            <span>Commissionable amount $</span>
+            <input type="text" inputmode="decimal" id="iAmount" placeholder="0.00">
+          </label>
+        </fieldset>
+
+        <!-- ---- PN Trust ---- -->
+        <fieldset class="cat-fields" data-cat="trust" hidden>
+          <legend class="sr-only">PN trust contract</legend>
+          <div class="field-row">
+            <label class="field">
+              <span>Age on contract date</span>
+              <input type="text" inputmode="numeric" id="tAge" placeholder="0">
+            </label>
+            <label class="field">
+              <span>Contract amount $</span>
+              <input type="text" inputmode="decimal" id="tAmount" placeholder="0.00">
+            </label>
+          </div>
+          <div class="field-row">
+            <label class="field">
+              <span>Down payment $</span>
+              <input type="text" inputmode="decimal" id="tDown" placeholder="0.00">
+            </label>
+            <label class="field">
+              <span>Term (months)</span>
+              <input type="text" inputmode="numeric" id="tTerm" placeholder="0 = single pay">
+            </label>
+          </div>
+          <div class="check-row">
+            <label class="check"><input type="checkbox" id="tHasAch"> ACH / bank draft</label>
+            <label class="check"><input type="checkbox" id="tTurnedAn"> Turned AN within 30 days</label>
+          </div>
+        </fieldset>
+
+        <!-- ---- Shared ---- -->
+        <div class="field-row">
+          <label class="field">
+            <span>Split % <small>(your share)</small></span>
+            <input type="text" inputmode="decimal" id="fSplit" placeholder="100">
+          </label>
+          <label class="field">
+            <span>Company generated lead?</span>
+            <div class="check-row check-row-inline">
+              <label class="check"><input type="checkbox" id="fCompanyLead"> Yes</label>
+            </div>
+          </label>
+        </div>
+        <p class="field-hint" id="leadHint" hidden></p>
+
+        <details class="advanced">
+          <summary>Advanced</summary>
+          <div class="field-row">
+            <label class="field">
+              <span>Corporate-set rate % <small>(large sales)</small></span>
+              <input type="text" inputmode="decimal" id="fCorpRate" placeholder="Auto">
+            </label>
+            <label class="field">
+              <span>Bonus volume override $</span>
+              <input type="text" inputmode="decimal" id="fVolOverride" placeholder="Auto">
+            </label>
+          </div>
+          <div class="check-row">
+            <label class="check"><input type="checkbox" id="fSplitVolume"> Split the bonus volume too</label>
+          </div>
+          <label class="field">
+            <span>Notes</span>
+            <textarea id="fNotes" rows="2" placeholder="Optional"></textarea>
+          </label>
+        </details>
+
+        <div class="preview" id="preview" aria-live="polite"></div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary" id="submitBtn">Add sale</button>
+          <button type="button" class="btn-ghost" id="clearForm">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ============ Sales list ============ -->
+    <section class="panel list" aria-label="Sales this month">
+      <div class="panel-head">
+        <h2>Sales this month</h2>
+        <div class="panel-actions">
+          <button type="button" class="link-btn" id="exportCsv">Export CSV</button>
+          <button type="button" class="link-btn" id="exportJson">Backup</button>
+        </div>
+      </div>
+      <div id="salesList"></div>
+    </section>
+  </div>
+
+  <section class="panel reference" aria-label="Schedule A reference">
+    <details>
+      <summary><h2>Schedule A reference tables</h2></summary>
+      <div id="referenceTables"></div>
+    </details>
+  </section>
+</main>
+
+<!-- ============ Settings drawer ============ -->
+<div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-label="Settings">
+  <div class="drawer-head">
+    <h2>Settings</h2>
+    <button type="button" class="icon-btn" id="closeDrawer" aria-label="Close settings">Close</button>
+  </div>
+  <div class="drawer-body">
+    <label class="field">
+      <span>Your role</span>
+      <select id="sRole"></select>
+    </label>
+    <p class="field-hint" id="roleHint"></p>
+
+    <label class="field">
+      <span>Location</span>
+      <input type="text" id="sLocation" placeholder="e.g. Tippecanoe Memory Gardens">
+    </label>
+
+    <label class="field">
+      <span>Heritage Certificate value $ <small>(for your location)</small></span>
+      <input type="text" inputmode="decimal" id="sHeritage" placeholder="0.00">
+    </label>
+    <p class="field-hint">A preneed right of burial at or above this value earns the $100 land sale bonus, for the first three contracts each sales month.</p>
+
+    <label class="field">
+      <span>Training days in this sales month</span>
+      <input type="text" inputmode="numeric" id="sTraining" placeholder="0">
+    </label>
+    <p class="field-hint">$100 daily rate for up to four weeks — training pay or commissions, whichever is greater.</p>
+
+    <hr>
+
+    <h3>Your data</h3>
+    <p class="field-hint">Everything is saved to this browser automatically as you type. Download a backup to move it to another device or keep it safe.</p>
+    <div class="drawer-actions">
+      <button type="button" class="btn-ghost" id="drawerExport">Download backup</button>
+      <label class="btn-ghost file-btn">
+        Restore backup
+        <input type="file" id="importFile" accept="application/json" hidden>
+      </label>
+    </div>
+    <button type="button" class="btn-danger" id="resetAll">Delete all data</button>
+
+    <hr>
+    <p class="field-hint" id="storageNote"></p>
+  </div>
+</aside>
+
+<script src="assets/rules.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
