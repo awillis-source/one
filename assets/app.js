@@ -47,7 +47,10 @@
       settings: {
         roleId: 'sales_counselor',
         location: '',
-        heritageCertificateValue: '',
+        /* Heritage Certificate value for this location — the threshold a
+         * preneed right of burial must reach to earn the $100 land sale
+         * bonus. Change it in Settings if your location's differs. */
+        heritageCertificateValue: '1195',
         reservePercent: '',
         trainingDays: {}
       },
@@ -61,6 +64,23 @@
 
   var state = defaultState();
 
+  /*
+   * Saved settings win, except that a blank saved value falls back to the
+   * default. Without this, a browser that ran an earlier version — which
+   * stored an empty Heritage Certificate value — would keep overriding the
+   * default with that blank.
+   */
+  function mergeSettings(saved) {
+    var merged = Object.assign(defaultState().settings, saved || {});
+    Object.keys(defaultState().settings).forEach(function (k) {
+      var def = defaultState().settings[k];
+      if ((merged[k] === '' || merged[k] == null) && def !== '' && def != null) {
+        merged[k] = def;
+      }
+    });
+    return merged;
+  }
+
   function load() {
     try {
       var raw = localStorage.getItem(STORE_KEY);
@@ -68,7 +88,7 @@
       var parsed = JSON.parse(raw);
       if (parsed && typeof parsed === 'object') {
         state = Object.assign(defaultState(), parsed);
-        state.settings = Object.assign(defaultState().settings, parsed.settings || {});
+        state.settings = mergeSettings(parsed.settings);
         state.sales = Array.isArray(parsed.sales) ? parsed.sales : [];
       }
     } catch (err) {
@@ -849,7 +869,7 @@
           if (!confirm('Replace the ' + state.sales.length + ' sale(s) in this browser with the ' +
               parsed.sales.length + ' sale(s) in this backup?')) { return; }
           state = Object.assign(defaultState(), parsed);
-          state.settings = Object.assign(defaultState().settings, parsed.settings || {});
+          state.settings = mergeSettings(parsed.settings);
           writeForm(state.draft || { category: state.category, date: todayIso() });
           $('sRole').value = state.settings.roleId;
           $('sLocation').value = state.settings.location || '';
@@ -877,10 +897,41 @@
       save(true);
     });
 
-    // Nothing in flight should be lost to a closing tab.
+    /*
+     * Rescue the in-progress form from a closing tab.
+     *
+     * Sales and settings are already written on every change, so the only
+     * thing at risk here is the half-typed entry form. Writing the whole of
+     * this tab's state would clobber sales another tab saved in the meantime,
+     * so layer only this tab's UI state onto whatever storage currently holds.
+     */
     window.addEventListener('beforeunload', function () {
-      state.draft = readForm();
-      try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (err) { /* nothing more to do */ }
+      try {
+        var current = JSON.parse(localStorage.getItem(STORE_KEY) || 'null') || state;
+        current.draft = readForm();
+        current.editingId = state.editingId;
+        current.activePeriod = state.activePeriod;
+        current.category = state.category;
+        localStorage.setItem(STORE_KEY, JSON.stringify(current));
+      } catch (err) { /* a closing tab has nowhere left to report this */ }
+    });
+
+    /* Another tab saved. Adopt its sales and settings without disturbing what
+     * is being typed here. */
+    window.addEventListener('storage', function (e) {
+      if (e.key !== STORE_KEY || !e.newValue) { return; }
+      try {
+        var incoming = JSON.parse(e.newValue);
+        if (!incoming || !Array.isArray(incoming.sales)) { return; }
+        state.sales = incoming.sales;
+        state.settings = mergeSettings(incoming.settings);
+        $('sRole').value = state.settings.roleId;
+        $('sLocation').value = state.settings.location || '';
+        $('sHeritage').value = state.settings.heritageCertificateValue || '';
+        renderRoleHint();
+        syncTrainingField();
+        render();
+      } catch (err) { /* ignore an unreadable write from another tab */ }
     });
 
     updateDateHint();

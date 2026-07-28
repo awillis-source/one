@@ -68,6 +68,10 @@ including the chargeback to 4% / 2% when a trust turns AN within 30 days.
 next tier, the $100 land sale bonus for the first three qualifying preneed
 contracts, and training pay when it beats commissions.
 
+The Heritage Certificate value defaults to **$1,195**, the threshold a preneed
+right of burial must reach to earn the land sale bonus. Change it under
+Settings if your location's differs.
+
 **Splits** — enter your share as a percentage. The contract's full commission
 and your share are both shown and both exported.
 
@@ -80,6 +84,9 @@ That means it is tied to **this browser on this device**. Clearing site data,
 using private browsing, or switching devices will lose it. Use
 **Settings → Download backup** regularly; restoring a backup on another
 device carries everything across.
+
+Two tabs open at once is safe — each picks up the other's sales as they are
+saved, and closing one never rolls back the other's work.
 
 Two exports:
 
