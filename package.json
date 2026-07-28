@@ -5,6 +5,7 @@
   "description": "Real-time commission tracker following Schedule A — Sales Guidelines Commission Schedule, effective 01/01/2025.",
   "scripts": {
     "test": "node --test test/rules.test.js",
+    "build": "node build.js",
     "start": "python3 -m http.server 8080"
   },
   "devDependencies": {
