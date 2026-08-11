@@ -24,9 +24,12 @@
     <span class="save-state" id="saveState" role="status" aria-live="polite">Saved</span>
     <button type="button" class="icon-btn" id="settingsBtn" aria-label="Settings">Settings</button>
   </div>
+  <div class="topbar-payout" id="topbarPayout" aria-hidden="true"></div>
 </header>
 
 <main>
+  <div class="banners" id="banners"></div>
+
   <!-- ============ Dashboard ============ -->
   <section class="dashboard" aria-label="Sales month summary">
     <div class="period-meta">
@@ -314,6 +317,7 @@
 
     <h3>Your data</h3>
     <p class="field-hint">Everything is saved to this browser automatically as you type. Download a backup to move it to another device or keep it safe.</p>
+    <p class="field-hint" id="backupNote"></p>
     <div class="drawer-actions">
       <button type="button" class="btn-ghost" id="drawerExport">Download backup</button>
       <label class="btn-ghost file-btn">

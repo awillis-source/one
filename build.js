@@ -45,6 +45,31 @@ if (/<(link|script)[^>]+(href|src)="assets\//.test(html)) {
   throw new Error('Bundle still references an external asset');
 }
 
-const out = 'commission-calculator.html';
-fs.writeFileSync(path.join(root, out), html);
-console.log(out + ' — ' + (fs.statSync(path.join(root, out)).size / 1024).toFixed(0) + ' KB, no external files needed');
+const write = (name, text) => {
+  fs.writeFileSync(path.join(root, name), text);
+  console.log(name.padEnd(30) + (Buffer.byteLength(text) / 1024).toFixed(0) + ' KB');
+};
+
+write('commission-calculator.html', html);
+
+/*
+ * The artifact host supplies its own <!doctype>, <html>, <head> and <body>,
+ * so that build carries the title, the styles and the body content only.
+ */
+const pick = (re, what) => {
+  const m = html.match(re);
+  if (!m) { throw new Error('Could not find ' + what + ' while building the artifact'); }
+  return m[1];
+};
+
+const artifact = [
+  '<title>' + pick(/<title>([\s\S]*?)<\/title>/, 'the title') + '</title>',
+  '<style>' + pick(/<style>([\s\S]*?)<\/style>/, 'the styles') + '</style>',
+  pick(/<body>([\s\S]*?)<\/body>/, 'the body').trim()
+].join('\n');
+
+if (/<\/?(html|head|body|!doctype)\b/i.test(artifact)) {
+  throw new Error('Artifact build still contains document skeleton tags');
+}
+
+write('artifact.html', artifact);

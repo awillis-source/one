@@ -58,7 +58,10 @@
       draft: null,
       editingId: null,
       activePeriod: null,
-      category: 'cemetery'
+      category: 'cemetery',
+      lastBackupAt: null,
+      backupSnoozedAt: null,
+      installTipDismissed: false
     };
   };
 
@@ -128,6 +131,93 @@
   function flagStorage(msg) {
     var el = $('storageNote');
     if (el) { el.textContent = msg; el.classList.add('is-flag'); }
+  }
+
+  /*
+   * Does this browser actually keep what we write?
+   *
+   * A page opened inside another app's in-app browser, in private browsing, or
+   * embedded as a third-party frame can throw on write — or accept the write
+   * and drop it. Better to say so on the first screen than to let a month of
+   * contracts vanish quietly.
+   */
+  var storageWorks = null;
+
+  function checkStorage() {
+    try {
+      var probe = STORE_KEY + '-probe';
+      localStorage.setItem(probe, 'x');
+      var ok = localStorage.getItem(probe) === 'x';
+      localStorage.removeItem(probe);
+      storageWorks = ok;
+    } catch (err) {
+      storageWorks = false;
+    }
+    return storageWorks;
+  }
+
+  var DAY_MS = 86400000;
+  var BACKUP_REMINDER_DAYS = 14;
+
+  function daysSinceBackup() {
+    if (!state.lastBackupAt) { return null; }
+    return Math.floor((Date.now() - state.lastBackupAt) / DAY_MS);
+  }
+
+  /*
+   * Banners carry the things that cost real money if ignored: storage that
+   * isn't working, and a backup that has gone stale.
+   */
+  function renderBanners() {
+    var box = $('banners');
+    var out = '';
+
+    if (storageWorks === false) {
+      out += '<div class="banner bad"><p><b>This browser is not saving your work.</b> ' +
+        'Private browsing and in-app browsers block saving. Open this page in Safari or Chrome directly, ' +
+        'or add it to your home screen, then re-enter anything above.</p></div>';
+    }
+
+    var since = daysSinceBackup();
+    var snoozed = state.backupSnoozedAt && (Date.now() - state.backupSnoozedAt) < 3 * DAY_MS;
+    var n = state.sales.length;
+    var contracts = n + ' contract' + (n === 1 ? '' : 's');
+    // Nagging on the very first contract only teaches the banner to be
+    // dismissed; a few entries in, the warning is worth its interruption.
+    var worthBackingUp = since === null ? n >= 3 : since >= BACKUP_REMINDER_DAYS;
+    if (n && !snoozed && worthBackingUp) {
+      out += '<div class="banner warn"><p>' +
+        (since === null
+          ? '<b>No backup yet.</b> Your ' + contracts + ' exist only in this browser. ' +
+            'Clearing browsing data would erase them.'
+          : '<b>Last backup was ' + since + ' days ago.</b> ' + contracts + ' saved since then.') +
+        '</p><span class="banner-actions"><button type="button" class="link-btn" data-banner="backup">Back up now</button>' +
+        '<button type="button" class="link-btn" data-banner="snooze">Later</button></span></div>';
+    }
+
+    if (!state.installTipDismissed && !isStandalone()) {
+      out += '<div class="banner"><p>Add this to your home screen and it opens like an app — ' +
+        'and your saved contracts last far longer than they do in a browser tab.</p>' +
+        '<span class="banner-actions"><button type="button" class="link-btn" data-banner="how">How</button>' +
+        '<button type="button" class="link-btn" data-banner="gotit">Got it</button></span></div>';
+    }
+
+    box.innerHTML = out;
+  }
+
+  function isStandalone() {
+    return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  }
+
+  function installInstructions() {
+    var ua = navigator.userAgent;
+    if (/iPhone|iPad|iPod/i.test(ua)) {
+      return 'On iPhone: tap the Share button at the bottom of Safari, scroll down, and tap "Add to Home Screen".';
+    }
+    if (/Android/i.test(ua)) {
+      return 'On Android: tap the three-dot menu in Chrome, then "Add to Home screen" (or "Install app").';
+    }
+    return 'On a phone, open this page in Safari or Chrome, then use the browser menu to add it to your home screen.';
   }
 
   /* ---------------------------------------------------------------- *
@@ -417,6 +507,7 @@
     $('periodCount').textContent = period.note || '';
 
     $('statPayout').textContent = money(p.payout);
+    $('topbarPayout').innerHTML = '<span class="cap">Month to date</span><span class="amt">' + money(p.payout) + '</span>';
     var sub = p.trainingApplies
       ? 'Training pay (' + money(p.trainingPay) + ') exceeds commissions'
       : 'Commissions + bonuses';
@@ -518,6 +609,8 @@
     renderPeriodSelect();
     renderDashboard();
     renderPreview();
+    renderBanners();
+    renderBackupNote();
   }
 
   /* ---------------------------------------------------------------- *
@@ -609,7 +702,27 @@
    * Export
    * ---------------------------------------------------------------- */
 
-  function download(name, text, type) {
+  /*
+   * Hand a file to the viewer.
+   *
+   * When the page runs as a published artifact the host provides a save API;
+   * the anchor-download fallback is blocked in that frame. Elsewhere — the
+   * standalone HTML file, a plain web server — the anchor is the only route.
+   */
+  function download(name, text, type, done) {
+    var host = window.claude && window.claude.downloads;
+    if (host && typeof host.save === 'function') {
+      host.save({ filename: name, data: text })
+        .then(function () { if (done) { done(true); } })
+        .catch(function (err) {
+          // A declined save is a normal outcome, not a failure to report.
+          if (!(err && err.code === 'user_rejected')) {
+            alert('That file could not be saved: ' + ((err && err.message) || 'unknown error'));
+          }
+          if (done) { done(false); }
+        });
+      return;
+    }
     var blob = new Blob([text], { type: type || 'application/json' });
     var url = URL.createObjectURL(blob);
     var a = document.createElement('a');
@@ -619,10 +732,28 @@
     a.click();
     document.body.removeChild(a);
     setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+    if (done) { done(true); }
   }
 
   function exportJson() {
-    download('commission-backup-' + todayIso() + '.json', JSON.stringify(state, null, 2));
+    download('commission-backup-' + todayIso() + '.json', JSON.stringify(state, null, 2), 'application/json',
+      function (ok) {
+        if (!ok) { return; }
+        state.lastBackupAt = Date.now();
+        state.backupSnoozedAt = null;
+        renderBanners();
+        renderBackupNote();
+        save(true);
+      });
+  }
+
+  function renderBackupNote() {
+    var since = daysSinceBackup();
+    var el = $('backupNote');
+    if (!el) { return; }
+    el.textContent = since === null
+      ? 'No backup downloaded yet.'
+      : since === 0 ? 'Last backup: today.' : 'Last backup: ' + since + ' day' + (since === 1 ? '' : 's') + ' ago.';
   }
 
   function exportCsv() {
@@ -702,9 +833,13 @@
   }
 
   function init() {
+    checkStorage();
     load();
 
     $('scheduleTag').textContent = R.SCHEDULE_VERSION;
+    if (storageWorks === false) {
+      flagStorage('This browser is not saving anything. Open the page directly in Safari or Chrome, or add it to your home screen.');
+    }
 
     R.INSURANCE_PRODUCTS.forEach(function (p) {
       var o = document.createElement('option');
@@ -832,6 +967,18 @@
     $('exportCsv').addEventListener('click', exportCsv);
     $('exportJson').addEventListener('click', exportJson);
     $('drawerExport').addEventListener('click', exportJson);
+
+    $('banners').addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-banner]');
+      if (!btn) { return; }
+      var act = btn.dataset.banner;
+      if (act === 'backup') { exportJson(); return; }
+      if (act === 'snooze') { state.backupSnoozedAt = Date.now(); }
+      if (act === 'gotit') { state.installTipDismissed = true; }
+      if (act === 'how') { alert(installInstructions()); return; }
+      renderBanners();
+      save(true);
+    });
 
     /* --- settings drawer --- */
     var openDrawer = function (open) {

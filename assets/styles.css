@@ -13,6 +13,7 @@
   --text-faint: #94a3b8;
   --accent: #1d4ed8;
   --accent-soft: #dbeafe;
+  --on-accent: #ffffff;
   --good: #047857;
   --good-soft: #d1fae5;
   --warn: #b45309;
@@ -24,8 +25,20 @@
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 
+/*
+ * Dark palette, declared twice on purpose.
+ *
+ * A host can leave the theme to the OS (nothing stamped on :root) or stamp an
+ * explicit data-theme. The media query covers the unstamped case but must not
+ * override an explicit light choice on a dark OS; the attribute rule covers an
+ * explicit dark choice on a light OS. Only tokens are redefined — no component
+ * takes a color from inside either block, or it would go undefined in the
+ * state the block doesn't match.
+ *
+ * Keep the two blocks identical.
+ */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #0b1120;
     --surface: #111c33;
     --surface-2: #16233d;
@@ -36,6 +49,7 @@
     --text-faint: #64748b;
     --accent: #60a5fa;
     --accent-soft: #1e3a8a;
+    --on-accent: #0b1120;
     --good: #34d399;
     --good-soft: #064e3b;
     --warn: #fbbf24;
@@ -44,6 +58,27 @@
     --bad-soft: #4c1d1d;
     --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 4px 16px rgba(0, 0, 0, .3);
   }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b1120;
+  --surface: #111c33;
+  --surface-2: #16233d;
+  --border: #23324f;
+  --border-strong: #334565;
+  --text: #e8edf7;
+  --text-dim: #94a3b8;
+  --text-faint: #64748b;
+  --accent: #60a5fa;
+  --accent-soft: #1e3a8a;
+  --on-accent: #0b1120;
+  --good: #34d399;
+  --good-soft: #064e3b;
+  --warn: #fbbf24;
+  --warn-soft: #4a3208;
+  --bad: #f87171;
+  --bad-soft: #4c1d1d;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 4px 16px rgba(0, 0, 0, .3);
 }
 
 html { -webkit-text-size-adjust: 100%; }
@@ -356,7 +391,7 @@ select { appearance: none; -webkit-appearance: none; padding-right: 30px;
   padding: 10px 18px; border-radius: 9px; cursor: pointer;
   border: 1px solid transparent;
 }
-.btn-primary { background: var(--accent); color: #fff; flex: 1; }
+.btn-primary { background: var(--accent); color: var(--on-accent); flex: 1; }
 .btn-primary:hover { filter: brightness(1.08); }
 .btn-ghost { background: var(--surface); border-color: var(--border-strong); color: var(--text); }
 .btn-ghost:hover { background: var(--surface-2); }
@@ -438,6 +473,97 @@ table.ref tbody tr:hover { background: var(--surface-2); }
 .drawer-body { padding: 18px; overflow-y: auto; display: grid; gap: 14px; align-content: start; }
 .drawer-body hr { border: 0; border-top: 1px solid var(--border); width: 100%; margin: 4px 0; }
 .drawer-actions { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }
+
+/* ---------------- Banners ---------------- */
+
+.banners { display: grid; gap: 10px; }
+.banners:empty { display: none; }
+
+.banner {
+  display: flex; flex-wrap: wrap; gap: 8px 12px;
+  align-items: center; justify-content: space-between;
+  padding: 11px 14px; border-radius: 10px;
+  font-size: .8125rem; line-height: 1.45;
+  border: 1px solid var(--border);
+  background: var(--surface); box-shadow: var(--shadow);
+}
+.banner p { margin: 0; flex: 1 1 240px; }
+.banner b { font-weight: 650; }
+.banner-actions { display: flex; gap: 10px; flex-shrink: 0; }
+.banner.warn { background: var(--warn-soft); border-color: color-mix(in srgb, var(--warn) 35%, transparent); color: var(--warn); }
+.banner.warn .link-btn { color: inherit; text-decoration: underline; }
+.banner.bad { background: var(--bad-soft); border-color: color-mix(in srgb, var(--bad) 40%, transparent); color: var(--bad); }
+.banner.bad .link-btn { color: inherit; text-decoration: underline; }
+
+/* ---------------- Phone ---------------- */
+
+.topbar-payout { display: none; }
+
+@media (max-width: 700px) {
+  /* Respect the notch and the home indicator. */
+  .topbar { padding: 10px max(14px, env(safe-area-inset-right)) 10px max(14px, env(safe-area-inset-left)); }
+  main {
+    padding: 14px max(14px, env(safe-area-inset-right))
+             max(24px, env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
+    gap: 14px;
+  }
+
+  .topbar { gap: 8px 10px; }
+  /* The home screen icon carries the app's name, so the wordmark would only
+   * cost a fifth of the screen above the fold. Kept for screen readers. */
+  .topbar-left {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+  }
+  .topbar-right { flex: 1 1 100%; }
+  .period-picker { flex: 1; }
+  .period-picker select { width: 100%; }
+  .save-state { font-size: .6875rem; padding: 4px 8px; }
+
+  /* The number being tracked stays on screen while entering a contract. */
+  .topbar-payout {
+    display: flex; align-items: baseline; gap: 8px;
+    flex: 1 1 100%;
+    padding-top: 7px; border-top: 1px solid var(--border);
+    font-variant-numeric: tabular-nums;
+  }
+  .topbar-payout .amt { font-size: 1.25rem; font-weight: 680; color: var(--accent); letter-spacing: -0.02em; }
+  .topbar-payout .cap { font-size: .6875rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: .04em; }
+
+  .panel { padding: 14px; border-radius: 10px; }
+  .tiles { gap: 10px; }
+  .tile { padding: 12px 13px; }
+  .tile-value { font-size: 1.4rem; }
+  /* The payout already leads the sticky header, so give its tile the full
+   * width here for the supporting detail. */
+  .tile-primary { grid-column: 1 / -1; }
+
+  /* 16px is the threshold below which iOS zooms the page on focus, which
+   * throws the layout off centre for the rest of the entry. */
+  input[type="text"], input[type="date"], input[type="number"], select, textarea,
+  .item-row select, .item-row input, .amount-grid input,
+  .period-picker select {
+    font-size: 16px;
+    padding: 11px 12px;
+    border-radius: 9px;
+  }
+  .period-picker select { padding-right: 32px; }
+  .check input { width: 22px; height: 22px; }
+  .check { padding: 7px 0; gap: 10px; }
+  .tab { padding: 10px 8px; font-size: .875rem; }
+  .btn-primary, .btn-ghost, .btn-danger { padding: 13px 18px; }
+  .link-btn { padding: 4px 0; }
+
+  .sale > summary { padding: 13px 14px; }
+  .sale-actions { gap: 18px; padding-top: 12px; }
+
+  .drawer { width: 100%; }
+  .drawer-body { padding: 16px max(16px, env(safe-area-inset-right)) max(28px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
 
 @media print {
   .topbar, .entry, .drawer, .drawer-backdrop, .panel-actions, .reference { display: none !important; }
