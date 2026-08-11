@@ -77,14 +77,45 @@ class PriceBook:
         )
 
     @classmethod
-    def _load_yaml(cls, path: Path) -> "PriceBook":
+    def _load_yaml(cls, path: Path, _seen: Optional[set[Path]] = None) -> "PriceBook":
+        """Load a YAML price book, following any 'include:' files it names.
+
+        Splitting the book by department (cemetery merchandise, caskets, …)
+        keeps each file editable on its own; includes are resolved relative to
+        the including file.
+        """
+        _seen = _seen or set()
+        resolved = path.resolve()
+        if resolved in _seen:
+            raise PriceBookError(f"{path}: circular include")
+        _seen.add(resolved)
+
         data = yaml.safe_load(path.read_text()) or {}
         if not isinstance(data, dict):
             raise PriceBookError(f"{path}: expected a mapping at the top level")
-        raw_items = data.get("items")
-        if not isinstance(raw_items, list) or not raw_items:
+
+        includes = data.get("include") or []
+        if not isinstance(includes, list):
+            raise PriceBookError(f"{path}: 'include' must be a list of files")
+
+        raw_items = data.get("items") or []
+        if not isinstance(raw_items, list):
+            raise PriceBookError(f"{path}: 'items' must be a list")
+        if not raw_items and not includes:
             raise PriceBookError(f"{path}: expected a non-empty 'items' list")
+
         items = _index(_item_from_mapping(row, path) for row in raw_items)
+        for included in includes:
+            child = (path.parent / str(included)).resolve()
+            if not child.exists():
+                raise PriceBookError(f"{path}: included price book not found: {child}")
+            for item in cls._load_yaml(child, _seen):
+                if item.sku in items:
+                    raise PriceBookError(
+                        f"{child}: sku {item.sku!r} is already defined in {path}"
+                    )
+                items[item.sku] = item
+
         return cls(
             items=items,
             source=path,

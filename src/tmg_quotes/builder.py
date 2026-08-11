@@ -26,11 +26,12 @@ from .models import (
 )
 from .pricebook import PriceBook
 
+# Generic wording, since a quote may cover cemetery merchandise, caskets, or
+# both. A quote that needs different wording sets its own 'footnotes:'.
 DEFAULT_FOOTNOTES = [
-    "Photos shown reflect the specific vault and marker collections priced above; "
-    "individual colors, wording, and artwork are customized at selection.",
-    "Cemetery merchandise and services are billed separately from funeral home "
-    "charges. Indiana sales tax of 7% applies to merchandise only.",
+    "Photos shown reflect the specific collections priced above; individual "
+    "colors, wording, and artwork are customized at selection.",
+    "Indiana sales tax of 7% applies to merchandise only.",
 ]
 
 

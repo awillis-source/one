@@ -52,13 +52,48 @@ All commands take `-p/--price-book` (default `data/price_book.yaml`).
 Use `price:` instead of `price_low`/`price_high` for a single figure. A range
 prints as `$1,007 – $1,328`; a single figure prints as `$995`.
 
+The book is split by department. `data/price_book.yaml` holds cemetery
+merchandise and services and pulls in the rest:
+
+```yaml
+include:
+  - caskets.yaml
+```
+
+Included paths are relative to the including file, a SKU may only be defined
+once across all of them, and circular includes are refused.
+
+### Caskets
+
+`data/caskets.yaml` holds all 254 caskets — 12 collections, $3,195 to $42,095 —
+with a photo each in `assets/caskets/`. It is generated, not hand-written:
+
+```bash
+python scripts/import_casket_catalog.py <casket-gallery.html>
+```
+
+The importer flags rather than fixes what the source got wrong, so nothing bad
+reaches a family quote silently. Two things currently need a human pass:
+
+- **108 truncated names** — the source catalog cut names at the display width
+  (`Victoriaville Mahogany Dar…`). Each carries a "confirm full finish name"
+  note.
+- **25 material/collection mismatches** — e.g. four caskets filed under
+  *Bronze & Copper* with a material of *Stainless Steel*, and nine *20 Gauge
+  Non-Gasketed* under *Value*. Each carries a note naming the conflict.
+
+Find them with `grep -n "confirm full finish name\|verify collection"
+data/caskets.yaml`. Fixing one is a plain edit to that file; re-running the
+importer overwrites it, so fix the source catalog or keep the edits.
+
 A CSV export from a spreadsheet works too — `tmg-quote -p pricing.csv build …`.
 Headers are matched case-insensitively and common names are accepted
 (`sku`/`code`/`item code`, `low`/`min`/`price_low`, and so on).
 
-> The five items currently in `data/price_book.yaml` were reconstructed from
-> the Schutz quote so the reference build reproduces exactly. Replace the file
-> with the real price book export.
+> The five cemetery items in `data/price_book.yaml` (vault, open & close, the
+> markers) were reconstructed from the Schutz quote so the reference build
+> reproduces exactly. Replace them with the real cemetery price book export.
+> The casket catalog is real.
 
 ## Writing a quote
 
@@ -85,6 +120,10 @@ features a different one, and `image:`/`caption:` set them outright.
 A line may be a bare SKU or a mapping with `quantity:` or `label:`. Anything
 sold regularly belongs in the price book; a one-off (an allowance, a credit)
 can be priced inline with `name:` and `price:`.
+
+Footnotes default to generic wording covering both cemetery merchandise and
+caskets. `quotes/schutz.yaml` sets its own `footnotes:` to keep the exact
+wording of the reference quote.
 
 ### Tax
 

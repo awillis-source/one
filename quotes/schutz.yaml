@@ -10,6 +10,12 @@ logo: assets/logo.png
 tax_rate: 7%
 apply_tax_to_totals: false   # the reference quote states tax in a footnote only
 
+footnotes:
+  - Photos shown reflect the specific vault and marker collections priced above;
+    individual colors, wording, and artwork are customized at selection.
+  - Cemetery merchandise and services are billed separately from funeral home
+    charges. Indiana sales tax of 7% applies to merchandise only.
+
 options:
   - title: Option 1 — Cremation Vault + Bronze Headstone
     subtitle: Includes vault, open & close, and bronze marker

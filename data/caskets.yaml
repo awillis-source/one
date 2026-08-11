@@ -1,0 +1,2295 @@
+# Casket price book — imported from the casket selection gallery.
+#
+# Source: TMG Casket Selection Gallery
+# 254 caskets across 12 collections.
+# Regenerate with: python scripts/import_casket_catalog.py <gallery.html>
+#
+# Names ending in '…' were truncated in the source catalog and carry a
+# 'confirm full name' note — they need a human pass before they go on a quote.
+
+items:
+  - sku: CKT-NEWPORT-BRUSHED-TOPAZ-G
+    name: "Newport Brushed Topaz/G…"
+    category: casket
+    collection: "Bronze & Copper"
+    price: 6495
+    image: assets/caskets/newport-brushed-topaz-g.jpg
+    caption: "Bronze & Copper collection — Stainless Steel"
+    notes: "Stainless Steel · name truncated in source catalog — confirm full finish name · source lists this under Bronze & Copper (48 & 32 oz Bronze, Copper) — verify collection/material pairing"
+
+  - sku: CKT-BELMONT-BRUSHED-NATURAL
+    name: "Belmont Brushed Natural/…"
+    category: casket
+    collection: "Bronze & Copper"
+    price: 6495
+    image: assets/caskets/belmont-brushed-natural.jpg
+    caption: "Bronze & Copper collection — Stainless Steel"
+    notes: "Stainless Steel · name truncated in source catalog — confirm full finish name · source lists this under Bronze & Copper (48 & 32 oz Bronze, Copper) — verify collection/material pairing"
+
+  - sku: CKT-3887-CENTURA-BRUSHED-SILV
+    name: "3887 Centura Brushed Silv…"
+    category: casket
+    collection: "Bronze & Copper"
+    price: 6695
+    image: assets/caskets/3887-centura-brushed-silv.jpg
+    caption: "Bronze & Copper collection — Stainless Steel"
+    notes: "Stainless Steel · name truncated in source catalog — confirm full finish name · source lists this under Bronze & Copper (48 & 32 oz Bronze, Copper) — verify collection/material pairing"
+
+  - sku: CKT-3887-CENTURA-BRUSHED-NAT
+    name: "3887 Centura Brushed Nat…"
+    category: casket
+    collection: "Bronze & Copper"
+    price: 6695
+    image: assets/caskets/3887-centura-brushed-nat.jpg
+    caption: "Bronze & Copper collection — Stainless Steel"
+    notes: "Stainless Steel · name truncated in source catalog — confirm full finish name · source lists this under Bronze & Copper (48 & 32 oz Bronze, Copper) — verify collection/material pairing"
+
+  - sku: CKT-2308-STANWYCK-DIAMOND
+    name: "2308 Stanwyck Diamond …"
+    category: casket
+    collection: "Bronze & Copper"
+    price: 8895
+    image: assets/caskets/2308-stanwyck-diamond.jpg
+    caption: "Bronze & Copper collection — Copper"
+    notes: "Copper · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-2308-VICTORIA-SILVER-ROSE
+    name: "2308 Victoria Silver Rose"
+    category: casket
+    collection: "Bronze & Copper"
+    price: 8895
+    image: assets/caskets/2308-victoria-silver-rose.jpg
+    caption: "Bronze & Copper collection — Copper"
+    notes: "Copper"
+
+  - sku: CKT-2308-CARLYLE-TROJAN-GUNM
+    name: "2308 Carlyle Trojan Gunm…"
+    category: casket
+    collection: "Bronze & Copper"
+    price: 8895
+    image: assets/caskets/2308-carlyle-trojan-gunm.jpg
+    caption: "Bronze & Copper collection — Copper"
+    notes: "Copper · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-2308-AUGUSTA-WINTER-BLOOM
+    name: "2308 Augusta Winter Bloom"
+    category: casket
+    collection: "Bronze & Copper"
+    price: 8895
+    image: assets/caskets/2308-augusta-winter-bloom.jpg
+    caption: "Bronze & Copper collection — Copper"
+    notes: "Copper"
+
+  - sku: CKT-2308-ESTATE-MIDNIGHT-BLUE
+    name: "2308 Estate Midnight Blue"
+    category: casket
+    collection: "Bronze & Copper"
+    price: 8895
+    image: assets/caskets/2308-estate-midnight-blue.jpg
+    caption: "Bronze & Copper collection — Copper"
+    notes: "Copper"
+
+  - sku: CKT-2308-PRINCETON-LIGHT-BRUS
+    name: "2308 Princeton Light Brus…"
+    category: casket
+    collection: "Bronze & Copper"
+    price: 9695
+    image: assets/caskets/2308-princeton-light-brus.jpg
+    caption: "Bronze & Copper collection — Copper"
+    notes: "Copper · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-2308-COURTNEY-TAUPE-BRUS
+    name: "2308 Courtney Taupe Brus…"
+    category: casket
+    collection: "Bronze & Copper"
+    price: 9695
+    image: assets/caskets/2308-courtney-taupe-brus.jpg
+    caption: "Bronze & Copper collection — Copper"
+    notes: "Copper · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-HARRISON-BRUSHED-NATURAL
+    name: "Harrison Brushed Natural/…"
+    category: casket
+    collection: "Bronze & Copper"
+    price: 13295
+    image: assets/caskets/harrison-brushed-natural.jpg
+    caption: "Bronze & Copper collection — 32 oz Bronze"
+    notes: "32 oz Bronze · Bronze · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-HARRISON-BRUSHED-NATURAL-2
+    name: "Harrison Brushed Natural/…"
+    category: casket
+    collection: "Bronze & Copper"
+    price: 13295
+    image: assets/caskets/harrison-brushed-natural-2.jpg
+    caption: "Bronze & Copper collection — 32 oz Bronze"
+    notes: "32 oz Bronze · Bronze · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-REGENCY-GOLD-BRUSHED-NAT
+    name: "Regency Gold Brushed Nat…"
+    category: casket
+    collection: "Bronze & Copper"
+    price: 20195
+    image: assets/caskets/regency-gold-brushed-nat.jpg
+    caption: "Bronze & Copper collection — 48 oz Bronze"
+    notes: "48 oz Bronze · Bronze · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-SUPRA-BRUSHED-NATURAL-4
+    name: "Supra Brushed Natural-4 …"
+    category: casket
+    collection: "Bronze & Copper"
+    price: 30695
+    image: assets/caskets/supra-brushed-natural-4.jpg
+    caption: "Bronze & Copper collection — 48 oz Bronze"
+    notes: "48 oz Bronze · Bronze · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-2889-MAJESTIC-BRUSHED-BR
+    name: "2889 Majestic Brushed Br…"
+    category: casket
+    collection: "Bronze & Copper"
+    price: 42095
+    image: assets/caskets/2889-majestic-brushed-br.jpg
+    caption: "Bronze & Copper collection — 48 oz Bronze"
+    notes: "48 oz Bronze · Bronze · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-STERLING-PURPLE
+    name: "Sterling Purple"
+    category: casket
+    collection: "Classic"
+    price: 4295
+    image: assets/caskets/sterling-purple.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-505-ALPINE-WHITE
+    name: "505 Alpine White"
+    category: casket
+    collection: "Classic"
+    price: 4295
+    image: assets/caskets/505-alpine-white.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-STERLING-EBONY-PLATINUM
+    name: "Sterling Ebony/Platinum"
+    category: casket
+    collection: "Classic"
+    price: 4295
+    image: assets/caskets/sterling-ebony-platinum.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-1382-POTOMAC-OCEAN-BLUE
+    name: "1382 Potomac Ocean Blue"
+    category: casket
+    collection: "Classic"
+    price: 4295
+    image: assets/caskets/1382-potomac-ocean-blue.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-1382-GENEVA-TAUPE
+    name: "1382 Geneva Taupe"
+    category: casket
+    collection: "Classic"
+    price: 4295
+    image: assets/caskets/1382-geneva-taupe.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-CLAIRMONT-BURGUNDY
+    name: "Clairmont Burgundy"
+    category: casket
+    collection: "Classic"
+    price: 4295
+    image: assets/caskets/clairmont-burgundy.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-1382-CHERRY-RED
+    name: "1382 Cherry Red"
+    category: casket
+    collection: "Classic"
+    price: 4295
+    image: assets/caskets/1382-cherry-red.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-1382-ALPINE-WHITE
+    name: "1382 Alpine White"
+    category: casket
+    collection: "Classic"
+    price: 4295
+    image: assets/caskets/1382-alpine-white.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-STERLING-ROSEBUD
+    name: "Sterling Rosebud"
+    category: casket
+    collection: "Classic"
+    price: 4295
+    image: assets/caskets/sterling-rosebud.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-STERLING-PLUM
+    name: "Sterling Plum"
+    category: casket
+    collection: "Classic"
+    price: 4295
+    image: assets/caskets/sterling-plum.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-887-FREEDOM-MIDNIGHT-BLUE
+    name: "887 Freedom Midnight Blue"
+    category: casket
+    collection: "Classic"
+    price: 4395
+    image: assets/caskets/887-freedom-midnight-blue.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-887-PATRIOT-EBONY
+    name: "887 Patriot Ebony"
+    category: casket
+    collection: "Classic"
+    price: 4395
+    image: assets/caskets/887-patriot-ebony.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-AFFINITY-LONDON-BLUE
+    name: "Affinity London Blue"
+    category: casket
+    collection: "Classic"
+    price: 4395
+    image: assets/caskets/affinity-london-blue.jpg
+    caption: "Classic collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-512-ORCHID-BLEND-GRAY
+    name: "512 Orchid Blend Gray"
+    category: casket
+    collection: "Classic"
+    price: 4395
+    image: assets/caskets/512-orchid-blend-gray.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-AFFINITY-LIGHT-ORCHID
+    name: "Affinity Light Orchid"
+    category: casket
+    collection: "Classic"
+    price: 4395
+    image: assets/caskets/affinity-light-orchid.jpg
+    caption: "Classic collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-PIERCE-CASHMERE
+    name: "Pierce Cashmere"
+    category: casket
+    collection: "Classic"
+    price: 4595
+    image: assets/caskets/pierce-cashmere.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-843-BORDEAUX-BRUSHED-PLU
+    name: "843 Bordeaux Brushed Plu…"
+    category: casket
+    collection: "Classic"
+    price: 4595
+    image: assets/caskets/843-bordeaux-brushed-plu.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-887-CONCORDIA-MIDNIGHT-TO
+    name: "887 Concordia Midnight To…"
+    category: casket
+    collection: "Classic"
+    price: 4595
+    image: assets/caskets/887-concordia-midnight-to.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-887-KEYSTONE-ROLLEX-BRUSH
+    name: "887 Keystone Rollex Brush…"
+    category: casket
+    collection: "Classic"
+    price: 4595
+    image: assets/caskets/887-keystone-rollex-brush.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-PIERCE-COLONIAL-PEWTER
+    name: "Pierce Colonial Pewter"
+    category: casket
+    collection: "Classic"
+    price: 4595
+    image: assets/caskets/pierce-colonial-pewter.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-PIERCE-CABERNET
+    name: "Pierce Cabernet"
+    category: casket
+    collection: "Classic"
+    price: 4595
+    image: assets/caskets/pierce-cabernet.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-426-BLUETONE
+    name: "426 Bluetone"
+    category: casket
+    collection: "Classic"
+    price: 4695
+    image: assets/caskets/426-bluetone.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-SHEFFIELD-LIGHT-ORCHID
+    name: "Sheffield Light Orchid"
+    category: casket
+    collection: "Classic"
+    price: 4695
+    image: assets/caskets/sheffield-light-orchid.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-843-WHITE-SAND
+    name: "843 White Sand"
+    category: casket
+    collection: "Classic"
+    price: 4695
+    image: assets/caskets/843-white-sand.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-447-CORAL-MIST-WHITE-PINK
+    name: "447 Coral Mist White/Pink"
+    category: casket
+    collection: "Classic"
+    price: 4695
+    image: assets/caskets/447-coral-mist-white-pink.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-843-MIDNIGHT-BLUE
+    name: "843 Midnight Blue"
+    category: casket
+    collection: "Classic"
+    price: 4695
+    image: assets/caskets/843-midnight-blue.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-843-CARDINAL-RED
+    name: "843 Cardinal Red"
+    category: casket
+    collection: "Classic"
+    price: 4695
+    image: assets/caskets/843-cardinal-red.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-447-TEAK-ANTIQUE-COPPER
+    name: "447 Teak Antique Copper/…"
+    category: casket
+    collection: "Classic"
+    price: 4695
+    image: assets/caskets/447-teak-antique-copper.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-843-HUNTER-GREEN
+    name: "843 Hunter Green"
+    category: casket
+    collection: "Classic"
+    price: 4695
+    image: assets/caskets/843-hunter-green.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-SPRINGFIELD-BRUSHED-NATUR
+    name: "Springfield Brushed Natur…"
+    category: casket
+    collection: "Classic"
+    price: 4695
+    image: assets/caskets/springfield-brushed-natur.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-SPRINGFIELD-BRUSHED-NATUR-2
+    name: "Springfield Brushed Natur…"
+    category: casket
+    collection: "Classic"
+    price: 4695
+    image: assets/caskets/springfield-brushed-natur-2.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-SPRINGFIELD-BRUSHED-NATUR-3
+    name: "Springfield Brushed Natur…"
+    category: casket
+    collection: "Classic"
+    price: 4695
+    image: assets/caskets/springfield-brushed-natur-3.jpg
+    caption: "Classic collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-EDSON-1614-DARK-GUNMETAL
+    name: "Edson/1614 Dark Gunmetal…"
+    category: casket
+    collection: "Companion"
+    price: 3995
+    image: assets/caskets/edson-1614-dark-gunmetal.jpg
+    caption: "Companion collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-REVERE-SEAMIST-SILVER
+    name: "Revere Seamist/Silver"
+    category: casket
+    collection: "Companion"
+    price: 3995
+    image: assets/caskets/revere-seamist-silver.jpg
+    caption: "Companion collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-EDSON-1614-COPPER-VENETI
+    name: "Edson/1614 Copper/Veneti…"
+    category: casket
+    collection: "Companion"
+    price: 3995
+    image: assets/caskets/edson-1614-copper-veneti.jpg
+    caption: "Companion collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-WINGATE-SILVER-EBONY
+    name: "Wingate Silver/Ebony"
+    category: casket
+    collection: "Companion"
+    price: 3995
+    image: assets/caskets/wingate-silver-ebony.jpg
+    caption: "Companion collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-WINGATE-ROSEBUD-AUTUMN
+    name: "Wingate Rosebud/Autumn …"
+    category: casket
+    collection: "Companion"
+    price: 3995
+    image: assets/caskets/wingate-rosebud-autumn.jpg
+    caption: "Companion collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-REVERE-VENETIAN-BRONZE
+    name: "Revere Venetian Bronze"
+    category: casket
+    collection: "Companion"
+    price: 3995
+    image: assets/caskets/revere-venetian-bronze.jpg
+    caption: "Companion collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-REVERE-PLATINUM
+    name: "Revere Platinum"
+    category: casket
+    collection: "Companion"
+    price: 3995
+    image: assets/caskets/revere-platinum.jpg
+    caption: "Companion collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-REVERENCE-WHITE-GOLD
+    name: "Reverence White/Gold"
+    category: casket
+    collection: "Companion"
+    price: 3995
+    image: assets/caskets/reverence-white-gold.jpg
+    caption: "Companion collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-REVERE-MONARCH-BLUE
+    name: "Revere Monarch Blue"
+    category: casket
+    collection: "Companion"
+    price: 3995
+    image: assets/caskets/revere-monarch-blue.jpg
+    caption: "Companion collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-WINGATE-COPPER-HAZE
+    name: "Wingate Copper Haze"
+    category: casket
+    collection: "Companion"
+    price: 3995
+    image: assets/caskets/wingate-copper-haze.jpg
+    caption: "Companion collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-FRESNO-CHAMPAGNE-SILVER
+    name: "Fresno Champagne Silver …"
+    category: casket
+    collection: "Companion"
+    price: 3995
+    image: assets/caskets/fresno-champagne-silver.jpg
+    caption: "Companion collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-FRESNO-SILVER-PEARL-LT-OR
+    name: "Fresno Silver Pearl & Lt Or…"
+    category: casket
+    collection: "Companion"
+    price: 3995
+    image: assets/caskets/fresno-silver-pearl-lt-or.jpg
+    caption: "Companion collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-FRESNO-SILVER-PEARL-MIDN
+    name: "Fresno Silver Pearl & Midn…"
+    category: casket
+    collection: "Companion"
+    price: 3995
+    image: assets/caskets/fresno-silver-pearl-midn.jpg
+    caption: "Companion collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-1058-LIGHT-GUNMETAL
+    name: "1058 Light Gunmetal"
+    category: casket
+    collection: "Companion"
+    price: 4095
+    image: assets/caskets/1058-light-gunmetal.jpg
+    caption: "Companion collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-1058-ANTIQUE-WHITE
+    name: "1058 Antique White"
+    category: casket
+    collection: "Companion"
+    price: 4095
+    image: assets/caskets/1058-antique-white.jpg
+    caption: "Companion collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-1058-VENETIAN-BRONZE-GOLD
+    name: "1058 Venetian Bronze/Gold"
+    category: casket
+    collection: "Companion"
+    price: 4095
+    image: assets/caskets/1058-venetian-bronze-gold.jpg
+    caption: "Companion collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-WARWICK-GLAZED-COUNTRY-PI
+    name: "Warwick Glazed Country Pi…"
+    category: casket
+    collection: "Country"
+    price: 4495
+    image: assets/caskets/warwick-glazed-country-pi.jpg
+    caption: "Country collection — Poplar"
+    notes: "Poplar · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-SEBRING-DARK-SATIN
+    name: "Sebring Dark Satin"
+    category: casket
+    collection: "Country"
+    price: 4595
+    image: assets/caskets/sebring-dark-satin.jpg
+    caption: "Country collection — Pecan"
+    notes: "Pecan · Wood · source lists this under Country (Poplar, Cedar & Pine) — verify collection/material pairing"
+
+  - sku: CKT-23RD-PSALM-MEDIUM-SATIN
+    name: "23rd Psalm Medium Satin"
+    category: casket
+    collection: "Country"
+    price: 4695
+    image: assets/caskets/23rd-psalm-medium-satin.jpg
+    caption: "Country collection — Poplar"
+    notes: "Poplar · Wood"
+
+  - sku: CKT-HORIZON-DARK-SATIN-PECAN
+    name: "Horizon Dark Satin Pecan"
+    category: casket
+    collection: "Country"
+    price: 4695
+    image: assets/caskets/horizon-dark-satin-pecan.jpg
+    caption: "Country collection — Poplar Veneer"
+    notes: "Poplar Veneer · Wood · source lists this under Country (Poplar, Cedar & Pine) — verify collection/material pairing"
+
+  - sku: CKT-MADISON-POPLAR-VENEER-IC
+    name: "Madison Poplar /Veneer Ic …"
+    category: casket
+    collection: "Country"
+    price: 4695
+    image: assets/caskets/madison-poplar-veneer-ic.jpg
+    caption: "Country collection — Poplar Veneer"
+    notes: "Poplar Veneer · Wood · name truncated in source catalog — confirm full finish name · source lists this under Country (Poplar, Cedar & Pine) — verify collection/material pairing"
+
+  - sku: CKT-BIRMINGHAM-MEDIUM-SATIN
+    name: "Birmingham Medium Satin"
+    category: casket
+    collection: "Country"
+    price: 4695
+    image: assets/caskets/birmingham-medium-satin.jpg
+    caption: "Country collection — Poplar Veneer"
+    notes: "Poplar Veneer · Wood · source lists this under Country (Poplar, Cedar & Pine) — verify collection/material pairing"
+
+  - sku: CKT-ALLEGIANCE-MEDIUM-SATIN
+    name: "Allegiance Medium Satin"
+    category: casket
+    collection: "Country"
+    price: 4695
+    image: assets/caskets/allegiance-medium-satin.jpg
+    caption: "Country collection — Poplar"
+    notes: "Poplar · Wood"
+
+  - sku: CKT-ALLEGIANCE-II-MEDIUM-SATIN
+    name: "Allegiance II Medium Satin"
+    category: casket
+    collection: "Country"
+    price: 4695
+    image: assets/caskets/allegiance-ii-medium-satin.jpg
+    caption: "Country collection — Poplar"
+    notes: "Poplar · Wood"
+
+  - sku: CKT-LINCOLN-DARK-SATIN
+    name: "Lincoln Dark Satin"
+    category: casket
+    collection: "Country"
+    price: 4895
+    image: assets/caskets/lincoln-dark-satin.jpg
+    caption: "Country collection — Poplar"
+    notes: "Poplar · Wood"
+
+  - sku: CKT-SUNSET-CEDAR-II
+    name: "Sunset Cedar II"
+    category: casket
+    collection: "Country"
+    price: 4895
+    image: assets/caskets/sunset-cedar-ii.jpg
+    caption: "Country collection — Cedar"
+    notes: "Cedar · Wood"
+
+  - sku: CKT-CLEO-POPLAR-OCTAGON-GLOSS
+    name: "Cleo Poplar Octagon Gloss"
+    category: casket
+    collection: "Country"
+    price: 4895
+    image: assets/caskets/cleo-poplar-octagon-gloss.jpg
+    caption: "Country collection — Poplar"
+    notes: "Poplar · Wood"
+
+  - sku: CKT-LINCOLN-DARK-SATIN-2
+    name: "Lincoln Dark Satin"
+    category: casket
+    collection: "Country"
+    price: 4895
+    image: assets/caskets/lincoln-dark-satin-2.jpg
+    caption: "Country collection — Poplar"
+    notes: "Poplar · Wood"
+
+  - sku: CKT-PROVINCIAL-POLISHED
+    name: "Provincial Polished"
+    category: casket
+    collection: "Country"
+    price: 4895
+    image: assets/caskets/provincial-polished.jpg
+    caption: "Country collection — Poplar"
+    notes: "Poplar · Wood"
+
+  - sku: CKT-COUNTRY-PINE-GLOSS-COUNTR
+    name: "Country Pine Gloss Countr…"
+    category: casket
+    collection: "Country"
+    price: 4895
+    image: assets/caskets/country-pine-gloss-countr.jpg
+    caption: "Country collection — Pine"
+    notes: "Pine · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-HALLMARK-POLISHED-FAIRMON
+    name: "Hallmark Polished Fairmon…"
+    category: casket
+    collection: "Country"
+    price: 4895
+    image: assets/caskets/hallmark-polished-fairmon.jpg
+    caption: "Country collection — Poplar"
+    notes: "Poplar · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-HUDSON-POLISHED
+    name: "Hudson Polished"
+    category: casket
+    collection: "Country"
+    price: 4985
+    image: assets/caskets/hudson-polished.jpg
+    caption: "Country collection — Poplar"
+    notes: "Poplar · Wood"
+
+  - sku: CKT-BARON-85-COPPER-ANTIQUE
+    name: "Baron 85 Copper Antique …"
+    category: casket
+    collection: "Essential"
+    price: 3195
+    image: assets/caskets/baron-85-copper-antique.jpg
+    caption: "Essential collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-BARON-85-SILVER
+    name: "Baron 85 Silver"
+    category: casket
+    collection: "Essential"
+    price: 3195
+    image: assets/caskets/baron-85-silver.jpg
+    caption: "Essential collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel"
+
+  - sku: CKT-BARON-85-WHITE
+    name: "Baron 85 White"
+    category: casket
+    collection: "Essential"
+    price: 3195
+    image: assets/caskets/baron-85-white.jpg
+    caption: "Essential collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel"
+
+  - sku: CKT-BARON-85-BLUE-SPARKLE
+    name: "Baron 85 Blue Sparkle"
+    category: casket
+    collection: "Essential"
+    price: 3195
+    image: assets/caskets/baron-85-blue-sparkle.jpg
+    caption: "Essential collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel"
+
+  - sku: CKT-BARON-85-WHITE-2
+    name: "Baron 85 White"
+    category: casket
+    collection: "Essential"
+    price: 3195
+    image: assets/caskets/baron-85-white-2.jpg
+    caption: "Essential collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel"
+
+  - sku: CKT-BARON-85-BLACK
+    name: "Baron 85 Black"
+    category: casket
+    collection: "Essential"
+    price: 3195
+    image: assets/caskets/baron-85-black.jpg
+    caption: "Essential collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel"
+
+  - sku: CKT-BRADFORD-BLACK
+    name: "Bradford Black"
+    category: casket
+    collection: "Essential"
+    price: 3395
+    image: assets/caskets/bradford-black.jpg
+    caption: "Essential collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel"
+
+  - sku: CKT-BRADFORD-PINK
+    name: "Bradford Pink"
+    category: casket
+    collection: "Essential"
+    price: 3395
+    image: assets/caskets/bradford-pink.jpg
+    caption: "Essential collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel"
+
+  - sku: CKT-BRADFORD-SPRUCE-BLUE
+    name: "Bradford Spruce Blue"
+    category: casket
+    collection: "Essential"
+    price: 3395
+    image: assets/caskets/bradford-spruce-blue.jpg
+    caption: "Essential collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel"
+
+  - sku: CKT-BRADFORD-MONARCH-BLUE
+    name: "Bradford Monarch Blue"
+    category: casket
+    collection: "Essential"
+    price: 3395
+    image: assets/caskets/bradford-monarch-blue.jpg
+    caption: "Essential collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel"
+
+  - sku: CKT-BRADFORD-SILVER
+    name: "Bradford Silver"
+    category: casket
+    collection: "Essential"
+    price: 3395
+    image: assets/caskets/bradford-silver.jpg
+    caption: "Essential collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel"
+
+  - sku: CKT-BRADFORD-WHITE
+    name: "Bradford White"
+    category: casket
+    collection: "Essential"
+    price: 3395
+    image: assets/caskets/bradford-white.jpg
+    caption: "Essential collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel"
+
+  - sku: CKT-BRADFORD-WHITE-2
+    name: "Bradford White"
+    category: casket
+    collection: "Essential"
+    price: 3395
+    image: assets/caskets/bradford-white-2.jpg
+    caption: "Essential collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel"
+
+  - sku: CKT-BRADFORD-COPPER
+    name: "Bradford Copper"
+    category: casket
+    collection: "Essential"
+    price: 3395
+    image: assets/caskets/bradford-copper.jpg
+    caption: "Essential collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel"
+
+  - sku: CKT-WOODSTOCK-SATIN-FAWN
+    name: "Woodstock Satin Fawn"
+    category: casket
+    collection: "Estate"
+    price: 5495
+    image: assets/caskets/woodstock-satin-fawn.jpg
+    caption: "Estate collection — Oak"
+    notes: "Oak · Wood · source lists this under Estate (Mahogany, Walnut & Cherry) — verify collection/material pairing"
+
+  - sku: CKT-CHESAPEAKE-SATIN-COLONIAL
+    name: "Chesapeake Satin Colonial …"
+    category: casket
+    collection: "Estate"
+    price: 5795
+    image: assets/caskets/chesapeake-satin-colonial.jpg
+    caption: "Estate collection — Cherry"
+    notes: "Cherry · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-KINROSS-DARK-POLISHED-SYC
+    name: "Kinross Dark Polished Syc…"
+    category: casket
+    collection: "Estate"
+    price: 5995
+    image: assets/caskets/kinross-dark-polished-syc.jpg
+    caption: "Estate collection — Maple"
+    notes: "Maple · Wood · name truncated in source catalog — confirm full finish name · source lists this under Estate (Mahogany, Walnut & Cherry) — verify collection/material pairing"
+
+  - sku: CKT-GATEWOOD-POLISHED-DARK-R
+    name: "Gatewood Polished Dark R…"
+    category: casket
+    collection: "Estate"
+    price: 6295
+    image: assets/caskets/gatewood-polished-dark-r.jpg
+    caption: "Estate collection — Cherry"
+    notes: "Cherry · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-CANTERBURY-SATIN-ENGLISH-C
+    name: "Canterbury Satin English C…"
+    category: casket
+    collection: "Estate"
+    price: 6295
+    image: assets/caskets/canterbury-satin-english-c.jpg
+    caption: "Estate collection — Cherry"
+    notes: "Cherry · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-ANDOVER-POLISHED-CARAMEL
+    name: "Andover Polished Caramel"
+    category: casket
+    collection: "Estate"
+    price: 6395
+    image: assets/caskets/andover-polished-caramel.jpg
+    caption: "Estate collection — Maple"
+    notes: "Maple · Wood · source lists this under Estate (Mahogany, Walnut & Cherry) — verify collection/material pairing"
+
+  - sku: CKT-CARMEN-POLISHED-CARAMEL
+    name: "Carmen Polished Caramel"
+    category: casket
+    collection: "Estate"
+    price: 6395
+    image: assets/caskets/carmen-polished-caramel.jpg
+    caption: "Estate collection — Maple"
+    notes: "Maple · Wood · source lists this under Estate (Mahogany, Walnut & Cherry) — verify collection/material pairing"
+
+  - sku: CKT-DOVER-SATIN
+    name: "Dover Satin"
+    category: casket
+    collection: "Estate"
+    price: 6395
+    image: assets/caskets/dover-satin.jpg
+    caption: "Estate collection — Oak"
+    notes: "Oak · Wood · source lists this under Estate (Mahogany, Walnut & Cherry) — verify collection/material pairing"
+
+  - sku: CKT-RATLIN-SATIN-FAWN
+    name: "Ratlin Satin Fawn"
+    category: casket
+    collection: "Estate"
+    price: 6395
+    image: assets/caskets/ratlin-satin-fawn.jpg
+    caption: "Estate collection — Oak"
+    notes: "Oak · Wood · source lists this under Estate (Mahogany, Walnut & Cherry) — verify collection/material pairing"
+
+  - sku: CKT-MANCHESTER-DARK-POLISHED
+    name: "Manchester Dark Polished"
+    category: casket
+    collection: "Estate"
+    price: 7395
+    image: assets/caskets/manchester-dark-polished.jpg
+    caption: "Estate collection — Cherry"
+    notes: "Cherry · Wood"
+
+  - sku: CKT-BRACONDALE-MAHOGANY-DAR
+    name: "Bracondale Mahogany Dar…"
+    category: casket
+    collection: "Estate"
+    price: 8195
+    image: assets/caskets/bracondale-mahogany-dar.jpg
+    caption: "Estate collection — Mahogany"
+    notes: "Mahogany · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-DIPLOMAT-DULL-RUBBED-NAT
+    name: "Diplomat Dull Rubbed Nat…"
+    category: casket
+    collection: "Estate"
+    price: 9995
+    image: assets/caskets/diplomat-dull-rubbed-nat.jpg
+    caption: "Estate collection — Walnut"
+    notes: "Walnut · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-WINFIELD-HIGH-POLISHED-CHE
+    name: "Winfield High Polished Che…"
+    category: casket
+    collection: "Estate"
+    price: 9995
+    image: assets/caskets/winfield-high-polished-che.jpg
+    caption: "Estate collection — Cherry"
+    notes: "Cherry · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-OLYMPUS-HIGH-POLISHED-GE
+    name: "Olympus High Polished Ge…"
+    category: casket
+    collection: "Estate"
+    price: 10695
+    image: assets/caskets/olympus-high-polished-ge.jpg
+    caption: "Estate collection — Mahogany"
+    notes: "Mahogany · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-PARLIAMENT-FULL-POLISHED-C
+    name: "Parliament Full Polished C…"
+    category: casket
+    collection: "Estate"
+    price: 15295
+    image: assets/caskets/parliament-full-polished-c.jpg
+    caption: "Estate collection — Mahogany"
+    notes: "Mahogany · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-VICTORIAVILLE-MAHOGANY-DAR
+    name: "Victoriaville Mahogany Dar…"
+    category: casket
+    collection: "Estate"
+    price: 22695
+    image: assets/caskets/victoriaville-mahogany-dar.jpg
+    caption: "Estate collection — Mahogany"
+    notes: "Mahogany · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-ASHFORD-GLOSS-STURBRIDGE
+    name: "Ashford Gloss Sturbridge"
+    category: casket
+    collection: "Heirloom"
+    price: 3895
+    image: assets/caskets/ashford-gloss-sturbridge.jpg
+    caption: "Heirloom collection — Poplar Veneer"
+    notes: "Poplar Veneer · Wood"
+
+  - sku: CKT-CAMBRIDGE-SATIN-MEDIUM
+    name: "Cambridge Satin Medium …"
+    category: casket
+    collection: "Heirloom"
+    price: 3895
+    image: assets/caskets/cambridge-satin-medium.jpg
+    caption: "Heirloom collection — Poplar Veneer"
+    notes: "Poplar Veneer · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-ASHFORD-SATIN-MEDIUM-WAL
+    name: "Ashford Satin Medium Wal…"
+    category: casket
+    collection: "Heirloom"
+    price: 3895
+    image: assets/caskets/ashford-satin-medium-wal.jpg
+    caption: "Heirloom collection — Poplar Veneer"
+    notes: "Poplar Veneer · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-WHITMIRE-II-SATIN-WALNUT
+    name: "Whitmire II Satin Walnut"
+    category: casket
+    collection: "Heirloom"
+    price: 3995
+    image: assets/caskets/whitmire-ii-satin-walnut.jpg
+    caption: "Heirloom collection — Poplar Veneer"
+    notes: "Poplar Veneer · Wood"
+
+  - sku: CKT-VERDI
+    name: "Verdi"
+    category: casket
+    collection: "Heirloom"
+    price: 3995
+    image: assets/caskets/verdi.jpg
+    caption: "Heirloom collection — Poplar"
+    notes: "Poplar · Wood"
+
+  - sku: CKT-SANDHURST-II-SATIN-SANDY-B
+    name: "Sandhurst II Satin Sandy B…"
+    category: casket
+    collection: "Heirloom"
+    price: 3995
+    image: assets/caskets/sandhurst-ii-satin-sandy-b.jpg
+    caption: "Heirloom collection — Poplar Veneer"
+    notes: "Poplar Veneer · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-ADAIR-DARK-GLOSS-WALNUT
+    name: "Adair Dark Gloss Walnut"
+    category: casket
+    collection: "Heirloom"
+    price: 3995
+    image: assets/caskets/adair-dark-gloss-walnut.jpg
+    caption: "Heirloom collection — Poplar Veneer"
+    notes: "Poplar Veneer · Wood"
+
+  - sku: CKT-ODESSA-DRIFTWOOD
+    name: "Odessa Driftwood"
+    category: casket
+    collection: "Heirloom"
+    price: 4095
+    image: assets/caskets/odessa-driftwood.jpg
+    caption: "Heirloom collection — Poplar"
+    notes: "Poplar · Wood"
+
+  - sku: CKT-AUGUSTA-SATIN-NATURAL
+    name: "Augusta Satin Natural"
+    category: casket
+    collection: "Heirloom"
+    price: 4195
+    image: assets/caskets/augusta-satin-natural.jpg
+    caption: "Heirloom collection — Pine"
+    notes: "Pine · Wood"
+
+  - sku: CKT-LINSAN-ANTIQUE-MAHOGANY
+    name: "Linsan Antique Mahogany"
+    category: casket
+    collection: "Heirloom"
+    price: 4195
+    image: assets/caskets/linsan-antique-mahogany.jpg
+    caption: "Heirloom collection — Poplar Veneer"
+    notes: "Poplar Veneer · Wood"
+
+  - sku: CKT-LINSAN-SATIN-MEDIUM-WALNUT
+    name: "Linsan Satin Medium Walnut"
+    category: casket
+    collection: "Heirloom"
+    price: 4195
+    image: assets/caskets/linsan-satin-medium-walnut.jpg
+    caption: "Heirloom collection — Poplar Veneer"
+    notes: "Poplar Veneer · Wood"
+
+  - sku: CKT-CLARK-ASH-VENEER-MEDIUM
+    name: "Clark Ash /Veneer Medium…"
+    category: casket
+    collection: "Heirloom"
+    price: 4295
+    image: assets/caskets/clark-ash-veneer-medium.jpg
+    caption: "Heirloom collection — Ash Veneer"
+    notes: "Ash Veneer · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-FREDRICK-SATIN-GOLDEN-GING
+    name: "Fredrick Satin Golden Ging…"
+    category: casket
+    collection: "Heirloom"
+    price: 4395
+    image: assets/caskets/fredrick-satin-golden-ging.jpg
+    caption: "Heirloom collection — Poplar"
+    notes: "Poplar · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-HARRIS-SATIN-WARM-BROWN
+    name: "Harris Satin Warm Brown"
+    category: casket
+    collection: "Heirloom"
+    price: 4395
+    image: assets/caskets/harris-satin-warm-brown.jpg
+    caption: "Heirloom collection — Poplar"
+    notes: "Poplar · Wood"
+
+  - sku: CKT-WASHINGTON-TWO-TONE-DARK
+    name: "Washington Two-Tone Dark…"
+    category: casket
+    collection: "Heirloom"
+    price: 4495
+    image: assets/caskets/washington-two-tone-dark.jpg
+    caption: "Heirloom collection — Poplar"
+    notes: "Poplar · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-DAKOTA-MEDIUM-SATIN
+    name: "Dakota Medium Satin"
+    category: casket
+    collection: "Heirloom"
+    price: 4495
+    image: assets/caskets/dakota-medium-satin.jpg
+    caption: "Heirloom collection — Poplar"
+    notes: "Poplar · Wood"
+
+  - sku: CKT-1058-EMBRACE-WHITE-SAND
+    name: "1058 Embrace White Sand…"
+    category: casket
+    collection: "Heritage"
+    price: 4095
+    image: assets/caskets/1058-embrace-white-sand.jpg
+    caption: "Heritage collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-1058-TAILOR-MIDNIGHT-BLUE-IC
+    name: "1058 Tailor Midnight Blue IC"
+    category: casket
+    collection: "Heritage"
+    price: 4095
+    image: assets/caskets/1058-tailor-midnight-blue-ic.jpg
+    caption: "Heritage collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-BOLTON-293-DARK-GUNMETA
+    name: "Bolton/293 Dark Gunmeta…"
+    category: casket
+    collection: "Heritage"
+    price: 4195
+    image: assets/caskets/bolton-293-dark-gunmeta.jpg
+    caption: "Heritage collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-BOLTON-293-MONARCH-BLUE
+    name: "Bolton/293 Monarch Blue/…"
+    category: casket
+    collection: "Heritage"
+    price: 4195
+    image: assets/caskets/bolton-293-monarch-blue.jpg
+    caption: "Heritage collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-BOLTON-293-WINEBERRY-SIL
+    name: "Bolton/293 Wineberry/Sil…"
+    category: casket
+    collection: "Heritage"
+    price: 4195
+    image: assets/caskets/bolton-293-wineberry-sil.jpg
+    caption: "Heritage collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-SIERRA-MONARCH-BLUE-SPRU
+    name: "Sierra Monarch Blue/Spru…"
+    category: casket
+    collection: "Heritage"
+    price: 4195
+    image: assets/caskets/sierra-monarch-blue-spru.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-SIERRA-ALAMEDA-ROSE-META
+    name: "Sierra Alameda Rose/Meta…"
+    category: casket
+    collection: "Heritage"
+    price: 4195
+    image: assets/caskets/sierra-alameda-rose-meta.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-SIERRA-SILVER-DARK-GUNMETAL
+    name: "Sierra Silver/Dark Gunmetal"
+    category: casket
+    collection: "Heritage"
+    price: 4195
+    image: assets/caskets/sierra-silver-dark-gunmetal.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-530-AMBROSIA-LIGHT-ORCHI
+    name: "530 Ambrosia Light Orchi…"
+    category: casket
+    collection: "Heritage"
+    price: 4195
+    image: assets/caskets/530-ambrosia-light-orchi.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-GOING-HOME-SPRUCE-BLUE
+    name: "Going Home Spruce Blue/…"
+    category: casket
+    collection: "Heritage"
+    price: 4195
+    image: assets/caskets/going-home-spruce-blue.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-515-DAWN-WHITE
+    name: "515 Dawn White"
+    category: casket
+    collection: "Heritage"
+    price: 4195
+    image: assets/caskets/515-dawn-white.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-515-SUTTON-BLACK
+    name: "515 Sutton Black"
+    category: casket
+    collection: "Heritage"
+    price: 4195
+    image: assets/caskets/515-sutton-black.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-515-ARDEN-LIGHT-ORCHID
+    name: "515 Arden Light Orchid"
+    category: casket
+    collection: "Heritage"
+    price: 4195
+    image: assets/caskets/515-arden-light-orchid.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-515-CAREY-WHITE-PETAL-PINK
+    name: "515 Carey White/Petal Pink"
+    category: casket
+    collection: "Heritage"
+    price: 4195
+    image: assets/caskets/515-carey-white-petal-pink.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-515-WILTON-SILVER
+    name: "515 Wilton Silver"
+    category: casket
+    collection: "Heritage"
+    price: 4195
+    image: assets/caskets/515-wilton-silver.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-515-BRIGHTON-MIDNIGHT-BLUE
+    name: "515 Brighton Midnight Blue"
+    category: casket
+    collection: "Heritage"
+    price: 4195
+    image: assets/caskets/515-brighton-midnight-blue.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-PEARL-ROSE-WHITE-PINK
+    name: "Pearl Rose White/Pink"
+    category: casket
+    collection: "Heritage"
+    price: 4195
+    image: assets/caskets/pearl-rose-white-pink.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-515-TIDEWATER-DARK-COPPER
+    name: "515 Tidewater Dark Copper"
+    category: casket
+    collection: "Heritage"
+    price: 4195
+    image: assets/caskets/515-tidewater-dark-copper.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-ESSEX-WHITE-PINK-MIRROR-S
+    name: "Essex White/Pink/Mirror S…"
+    category: casket
+    collection: "Heritage"
+    price: 4295
+    image: assets/caskets/essex-white-pink-mirror-s.jpg
+    caption: "Heritage collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-ESSEX-SPRUCE-BLUE-MIRROR
+    name: "Essex Spruce Blue/Mirror …"
+    category: casket
+    collection: "Heritage"
+    price: 4295
+    image: assets/caskets/essex-spruce-blue-mirror.jpg
+    caption: "Heritage collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-PHOENIX-TUSCANY-ROSEBUD
+    name: "Phoenix Tuscany Rosebud"
+    category: casket
+    collection: "Heritage"
+    price: 4295
+    image: assets/caskets/phoenix-tuscany-rosebud.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-ESSEX-EBONY-MIRROR-SIDES
+    name: "Essex Ebony/Mirror Sides"
+    category: casket
+    collection: "Heritage"
+    price: 4295
+    image: assets/caskets/essex-ebony-mirror-sides.jpg
+    caption: "Heritage collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-FORTE-CHERRY-RED
+    name: "Forte Cherry Red"
+    category: casket
+    collection: "Heritage"
+    price: 4295
+    image: assets/caskets/forte-cherry-red.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-STERLING-GRECIAN-GOLD
+    name: "Sterling Grecian Gold"
+    category: casket
+    collection: "Heritage"
+    price: 4295
+    image: assets/caskets/sterling-grecian-gold.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-STERLING-ANTIQUE-WHITE-SILV
+    name: "Sterling Antique White/Silv…"
+    category: casket
+    collection: "Heritage"
+    price: 4295
+    image: assets/caskets/sterling-antique-white-silv.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-PHOENIX-DECLARATION-PLATIN
+    name: "Phoenix Declaration Platin…"
+    category: casket
+    collection: "Heritage"
+    price: 4295
+    image: assets/caskets/phoenix-declaration-platin.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-STERLING-STORM-BLUE-SPRUC
+    name: "Sterling Storm Blue/Spruc…"
+    category: casket
+    collection: "Heritage"
+    price: 4295
+    image: assets/caskets/sterling-storm-blue-spruc.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-NEXUS-BLACK
+    name: "Nexus Black"
+    category: casket
+    collection: "Heritage"
+    price: 4295
+    image: assets/caskets/nexus-black.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-NEXUS-GRAY
+    name: "Nexus Gray"
+    category: casket
+    collection: "Heritage"
+    price: 4295
+    image: assets/caskets/nexus-gray.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-FORTE-DARK-GUNMETAL-SILVER
+    name: "Forte Dark Gunmetal/Silver"
+    category: casket
+    collection: "Heritage"
+    price: 4295
+    image: assets/caskets/forte-dark-gunmetal-silver.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-FORTE-LEMANS-BLUE
+    name: "Forte Lemans Blue"
+    category: casket
+    collection: "Heritage"
+    price: 4295
+    image: assets/caskets/forte-lemans-blue.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-STERLING-EMPIRE-BLUE
+    name: "Sterling Empire Blue"
+    category: casket
+    collection: "Heritage"
+    price: 4295
+    image: assets/caskets/sterling-empire-blue.jpg
+    caption: "Heritage collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-STAPLETON-MIDNIGHT-BRUSHED
+    name: "Stapleton Midnight Brushed"
+    category: casket
+    collection: "Signature"
+    price: 4895
+    image: assets/caskets/stapleton-midnight-brushed.jpg
+    caption: "Signature collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-STAPLETON-TAUPE-BRUSHED
+    name: "Stapleton Taupe Brushed"
+    category: casket
+    collection: "Signature"
+    price: 4895
+    image: assets/caskets/stapleton-taupe-brushed.jpg
+    caption: "Signature collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-STAPLETON-BRUSHED-COPPER
+    name: "Stapleton Brushed Copper …"
+    category: casket
+    collection: "Signature"
+    price: 4895
+    image: assets/caskets/stapleton-brushed-copper.jpg
+    caption: "Signature collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-STAPLETON-CHARCOAL-BRUSHED
+    name: "Stapleton Charcoal Brushed"
+    category: casket
+    collection: "Signature"
+    price: 4895
+    image: assets/caskets/stapleton-charcoal-brushed.jpg
+    caption: "Signature collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-HYACINTH-BRUSHED-ORCHID
+    name: "Hyacinth Brushed Orchid/…"
+    category: casket
+    collection: "Signature"
+    price: 4895
+    image: assets/caskets/hyacinth-brushed-orchid.jpg
+    caption: "Signature collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-NEOPOLITAN-SPRUCE-BLUE
+    name: "Neopolitan Spruce Blue"
+    category: casket
+    collection: "Signature"
+    price: 4995
+    image: assets/caskets/neopolitan-spruce-blue.jpg
+    caption: "Signature collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-HAMILTON-ANTIQUE-WHITE-SI
+    name: "Hamilton Antique White/Si…"
+    category: casket
+    collection: "Signature"
+    price: 4995
+    image: assets/caskets/hamilton-antique-white-si.jpg
+    caption: "Signature collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-1556-GOING-HOME-DIAMON
+    name: "1556 Going Home Diamon…"
+    category: casket
+    collection: "Signature"
+    price: 4995
+    image: assets/caskets/1556-going-home-diamon.jpg
+    caption: "Signature collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-5085-CONWELL-BLACK-CASH
+    name: "5085 Conwell Black Cash…"
+    category: casket
+    collection: "Signature"
+    price: 4995
+    image: assets/caskets/5085-conwell-black-cash.jpg
+    caption: "Signature collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-821-LIGHT-NUTMEG-BRUSHED
+    name: "821 Light Nutmeg Brushed"
+    category: casket
+    collection: "Signature"
+    price: 4995
+    image: assets/caskets/821-light-nutmeg-brushed.jpg
+    caption: "Signature collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-1725-BRUSHED-CASHMERE-C
+    name: "1725 Brushed Cashmere C…"
+    category: casket
+    collection: "Signature"
+    price: 5095
+    image: assets/caskets/1725-brushed-cashmere-c.jpg
+    caption: "Signature collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-PIETA-BRUSHED-ELGIN-GOLD
+    name: "Pieta Brushed Elgin Gold/…"
+    category: casket
+    collection: "Signature"
+    price: 5195
+    image: assets/caskets/pieta-brushed-elgin-gold.jpg
+    caption: "Signature collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-PIETA-BRUSHED-LIGHT-COPPE
+    name: "Pieta Brushed Light Coppe…"
+    category: casket
+    collection: "Signature"
+    price: 5195
+    image: assets/caskets/pieta-brushed-light-coppe.jpg
+    caption: "Signature collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-1585-CARRINGTON-CHAMPAG
+    name: "1585 Carrington Champag…"
+    category: casket
+    collection: "Signature"
+    price: 5195
+    image: assets/caskets/1585-carrington-champag.jpg
+    caption: "Signature collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-IVORY-PEARL-ANTIQUE-WHITE
+    name: "Ivory Pearl Antique White"
+    category: casket
+    collection: "Signature"
+    price: 5495
+    image: assets/caskets/ivory-pearl-antique-white.jpg
+    caption: "Signature collection — 18 Gauge"
+    notes: "18 Gauge · Steel"
+
+  - sku: CKT-SILVER-ROSE-SILVER-ROSE-PLA
+    name: "Silver Rose Silver Rose/Pla…"
+    category: casket
+    collection: "Signature"
+    price: 5495
+    image: assets/caskets/silver-rose-silver-rose-pla.jpg
+    caption: "Signature collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-CAMEO-ROSE-ANTIQUE-WHITE
+    name: "Cameo Rose Antique White…"
+    category: casket
+    collection: "Stainless Steel"
+    price: 5495
+    image: assets/caskets/cameo-rose-antique-white.jpg
+    caption: "Stainless Steel collection — 18 Gauge"
+    notes: "18 Gauge · Steel · name truncated in source catalog — confirm full finish name · source lists this under Stainless Steel (Stainless Steel) — verify collection/material pairing"
+
+  - sku: CKT-5298-TITAN-BRUSHED
+    name: "5298 Titan Brushed"
+    category: casket
+    collection: "Stainless Steel"
+    price: 5795
+    image: assets/caskets/5298-titan-brushed.jpg
+    caption: "Stainless Steel collection — 18 Gauge"
+    notes: "18 Gauge · Steel · source lists this under Stainless Steel (Stainless Steel) — verify collection/material pairing"
+
+  - sku: CKT-CARESA-BRUSHED-SILVER-ROS
+    name: "Caresa Brushed Silver Ros…"
+    category: casket
+    collection: "Stainless Steel"
+    price: 5895
+    image: assets/caskets/caresa-brushed-silver-ros.jpg
+    caption: "Stainless Steel collection — Stainless Steel"
+    notes: "Stainless Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-3502-BRUSHED-HYACINTH
+    name: "3502 Brushed Hyacinth"
+    category: casket
+    collection: "Stainless Steel"
+    price: 5895
+    image: assets/caskets/3502-brushed-hyacinth.jpg
+    caption: "Stainless Steel collection — Stainless Steel"
+    notes: "Stainless Steel"
+
+  - sku: CKT-MANSFIELD-BRUSHED-NATURAL
+    name: "Mansfield Brushed Natural…"
+    category: casket
+    collection: "Stainless Steel"
+    price: 5895
+    image: assets/caskets/mansfield-brushed-natural.jpg
+    caption: "Stainless Steel collection — Stainless Steel"
+    notes: "Stainless Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-CHAMPAGNE-ROSE-BRUSHED
+    name: "Champagne Rose Brushed …"
+    category: casket
+    collection: "Stainless Steel"
+    price: 5895
+    image: assets/caskets/champagne-rose-brushed.jpg
+    caption: "Stainless Steel collection — Stainless Steel"
+    notes: "Stainless Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-SANCTUARY-BRUSHED-BLUE-D
+    name: "Sanctuary Brushed Blue/D…"
+    category: casket
+    collection: "Stainless Steel"
+    price: 5895
+    image: assets/caskets/sanctuary-brushed-blue-d.jpg
+    caption: "Stainless Steel collection — Stainless Steel"
+    notes: "Stainless Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-ONYX-BRUSHED-NATURAL-EBO
+    name: "Onyx Brushed Natural/Ebo…"
+    category: casket
+    collection: "Stainless Steel"
+    price: 5895
+    image: assets/caskets/onyx-brushed-natural-ebo.jpg
+    caption: "Stainless Steel collection — Stainless Steel"
+    notes: "Stainless Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-GALAXY-BRUSHED-NATURAL-S
+    name: "Galaxy Brushed Natural/S…"
+    category: casket
+    collection: "Stainless Steel"
+    price: 5995
+    image: assets/caskets/galaxy-brushed-natural-s.jpg
+    caption: "Stainless Steel collection — Stainless Steel"
+    notes: "Stainless Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-GALAXY-BRUSHED-COPPER-TI
+    name: "Galaxy Brushed Copper/Ti…"
+    category: casket
+    collection: "Stainless Steel"
+    price: 5995
+    image: assets/caskets/galaxy-brushed-copper-ti.jpg
+    caption: "Stainless Steel collection — Stainless Steel"
+    notes: "Stainless Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-3935-HARVEST-DARK-SAGE
+    name: "3935 Harvest Dark Sage …"
+    category: casket
+    collection: "Stainless Steel"
+    price: 5995
+    image: assets/caskets/3935-harvest-dark-sage.jpg
+    caption: "Stainless Steel collection — Stainless Steel"
+    notes: "Stainless Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-3964-MEDALLION-LIGHT-NUT
+    name: "3964 Medallion Light Nut…"
+    category: casket
+    collection: "Stainless Steel"
+    price: 5995
+    image: assets/caskets/3964-medallion-light-nut.jpg
+    caption: "Stainless Steel collection — Stainless Steel"
+    notes: "Stainless Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-3851-NEWPORT-BRUSHED
+    name: "3851 Newport Brushed"
+    category: casket
+    collection: "Stainless Steel"
+    price: 6395
+    image: assets/caskets/3851-newport-brushed.jpg
+    caption: "Stainless Steel collection — Stainless Steel"
+    notes: "Stainless Steel"
+
+  - sku: CKT-3851-SILVER-PEARL-BRUSHED
+    name: "3851 Silver Pearl Brushed"
+    category: casket
+    collection: "Stainless Steel"
+    price: 6395
+    image: assets/caskets/3851-silver-pearl-brushed.jpg
+    caption: "Stainless Steel collection — Stainless Steel"
+    notes: "Stainless Steel"
+
+  - sku: CKT-3851-PRINCESS-HYACINTH-BR
+    name: "3851 Princess Hyacinth Br…"
+    category: casket
+    collection: "Stainless Steel"
+    price: 6395
+    image: assets/caskets/3851-princess-hyacinth-br.jpg
+    caption: "Stainless Steel collection — Stainless Steel"
+    notes: "Stainless Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-3887-REGENCY-DARK-BRUSH
+    name: "3887 Regency Dark Brush…"
+    category: casket
+    collection: "Stainless Steel"
+    price: 6395
+    image: assets/caskets/3887-regency-dark-brush.jpg
+    caption: "Stainless Steel collection — Stainless Steel"
+    notes: "Stainless Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-AMERICAN-BARNWOOD-SATIN
+    name: "American Barnwood Satin …"
+    category: casket
+    collection: "Traditional"
+    price: 5095
+    image: assets/caskets/american-barnwood-satin.jpg
+    caption: "Traditional collection — Oak"
+    notes: "Oak · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-HEARTHSIDE-SATIN-TUTONE-TI
+    name: "Hearthside Satin Tutone Ti…"
+    category: casket
+    collection: "Traditional"
+    price: 5095
+    image: assets/caskets/hearthside-satin-tutone-ti.jpg
+    caption: "Traditional collection — Oak"
+    notes: "Oak · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-MAGNOLIA-MEDIUM-POLISHED
+    name: "Magnolia Medium Polished…"
+    category: casket
+    collection: "Traditional"
+    price: 5095
+    image: assets/caskets/magnolia-medium-polished.jpg
+    caption: "Traditional collection — Poplar"
+    notes: "Poplar · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-PIETA-POPLAR-DARK-POLISHED
+    name: "Pieta Poplar Dark Polished…"
+    category: casket
+    collection: "Traditional"
+    price: 5095
+    image: assets/caskets/pieta-poplar-dark-polished.jpg
+    caption: "Traditional collection — Poplar"
+    notes: "Poplar · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-MONTGOMERY-SATIN-AMERIC
+    name: "Montgomery Satin Americ…"
+    category: casket
+    collection: "Traditional"
+    price: 5095
+    image: assets/caskets/montgomery-satin-americ.jpg
+    caption: "Traditional collection — Ash"
+    notes: "Ash · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-OAKLAND-SATIN-FAWN-SHADED
+    name: "Oakland Satin Fawn/Shaded"
+    category: casket
+    collection: "Traditional"
+    price: 5095
+    image: assets/caskets/oakland-satin-fawn-shaded.jpg
+    caption: "Traditional collection — Oak"
+    notes: "Oak · Wood"
+
+  - sku: CKT-CAMEO-POLISHED-STURBRIDGE
+    name: "Cameo Polished Sturbridge"
+    category: casket
+    collection: "Traditional"
+    price: 5095
+    image: assets/caskets/cameo-polished-sturbridge.jpg
+    caption: "Traditional collection — Poplar"
+    notes: "Poplar · Wood"
+
+  - sku: CKT-DU-VALAIS-SATIN-GOLDEN-AUT
+    name: "Du Valais Satin Golden Aut…"
+    category: casket
+    collection: "Traditional"
+    price: 5195
+    image: assets/caskets/du-valais-satin-golden-aut.jpg
+    caption: "Traditional collection — Oak"
+    notes: "Oak · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-AKRON-A-LIGHT-SATIN
+    name: "Akron A Light Satin"
+    category: casket
+    collection: "Traditional"
+    price: 5195
+    image: assets/caskets/akron-a-light-satin.jpg
+    caption: "Traditional collection — Oak"
+    notes: "Oak · Wood"
+
+  - sku: CKT-VIRGINIA-ROSE-LIGHT-SATIN
+    name: "Virginia Rose Light Satin"
+    category: casket
+    collection: "Traditional"
+    price: 5195
+    image: assets/caskets/virginia-rose-light-satin.jpg
+    caption: "Traditional collection — Maple"
+    notes: "Maple · Wood"
+
+  - sku: CKT-MAGNOLIA-A-MEDIUM-POLISH
+    name: "Magnolia A Medium Polish…"
+    category: casket
+    collection: "Traditional"
+    price: 5295
+    image: assets/caskets/magnolia-a-medium-polish.jpg
+    caption: "Traditional collection — Poplar"
+    notes: "Poplar · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-MALORIE-POLISHED-WARM-BR
+    name: "Malorie Polished Warm Br…"
+    category: casket
+    collection: "Traditional"
+    price: 5295
+    image: assets/caskets/malorie-polished-warm-br.jpg
+    caption: "Traditional collection — Maple"
+    notes: "Maple · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-CLEARWOOD-SATIN-LIGHT-COLO
+    name: "Clearwood Satin Light Colo…"
+    category: casket
+    collection: "Traditional"
+    price: 5295
+    image: assets/caskets/clearwood-satin-light-colo.jpg
+    caption: "Traditional collection — Maple"
+    notes: "Maple · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-CLEARWOOD-SATIN-LIGHT-COLO-2
+    name: "Clearwood Satin Light Colo…"
+    category: casket
+    collection: "Traditional"
+    price: 5295
+    image: assets/caskets/clearwood-satin-light-colo-2.jpg
+    caption: "Traditional collection — Maple"
+    notes: "Maple · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-EL-PASO-A-SATIN-TUTONE-TIM
+    name: "El Paso A Satin Tutone Tim…"
+    category: casket
+    collection: "Traditional"
+    price: 5495
+    image: assets/caskets/el-paso-a-satin-tutone-tim.jpg
+    caption: "Traditional collection — Oak"
+    notes: "Oak · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-SOVEREIGN-SATIN-SOUTHERN
+    name: "Sovereign Satin Southern …"
+    category: casket
+    collection: "Traditional"
+    price: 5495
+    image: assets/caskets/sovereign-satin-southern.jpg
+    caption: "Traditional collection — Pecan"
+    notes: "Pecan · Wood · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-CHANDLER-718-MONARCH-BLUE
+    name: "Chandler/718 Monarch Blue"
+    category: casket
+    collection: "Value"
+    price: 3595
+    image: assets/caskets/chandler-718-monarch-blue.jpg
+    caption: "Value collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel · source lists this under Value (20 Gauge Steel) — verify collection/material pairing"
+
+  - sku: CKT-CHANDLER-718-ORCHID-SHAD
+    name: "Chandler/718 Orchid Shad…"
+    category: casket
+    collection: "Value"
+    price: 3595
+    image: assets/caskets/chandler-718-orchid-shad.jpg
+    caption: "Value collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel · name truncated in source catalog — confirm full finish name · source lists this under Value (20 Gauge Steel) — verify collection/material pairing"
+
+  - sku: CKT-PATTON-1123-SOFT-PINK
+    name: "Patton/1123 Soft Pink"
+    category: casket
+    collection: "Value"
+    price: 3595
+    image: assets/caskets/patton-1123-soft-pink.jpg
+    caption: "Value collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel · source lists this under Value (20 Gauge Steel) — verify collection/material pairing"
+
+  - sku: CKT-PATTON-1123-MIDNIGHT-BLUE
+    name: "Patton/1123 Midnight Blue"
+    category: casket
+    collection: "Value"
+    price: 3595
+    image: assets/caskets/patton-1123-midnight-blue.jpg
+    caption: "Value collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel · source lists this under Value (20 Gauge Steel) — verify collection/material pairing"
+
+  - sku: CKT-PATTON-1123-WHITE
+    name: "Patton/1123 White"
+    category: casket
+    collection: "Value"
+    price: 3595
+    image: assets/caskets/patton-1123-white.jpg
+    caption: "Value collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel · source lists this under Value (20 Gauge Steel) — verify collection/material pairing"
+
+  - sku: CKT-PATTON-1123-SILVER
+    name: "Patton/1123 Silver"
+    category: casket
+    collection: "Value"
+    price: 3595
+    image: assets/caskets/patton-1123-silver.jpg
+    caption: "Value collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel · source lists this under Value (20 Gauge Steel) — verify collection/material pairing"
+
+  - sku: CKT-CHANDLER-718-COLONIAL-BRO
+    name: "Chandler/718 Colonial Bro…"
+    category: casket
+    collection: "Value"
+    price: 3595
+    image: assets/caskets/chandler-718-colonial-bro.jpg
+    caption: "Value collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel · name truncated in source catalog — confirm full finish name · source lists this under Value (20 Gauge Steel) — verify collection/material pairing"
+
+  - sku: CKT-CHANDLER-718-PINK-SHADED
+    name: "Chandler/718 Pink Shaded…"
+    category: casket
+    collection: "Value"
+    price: 3595
+    image: assets/caskets/chandler-718-pink-shaded.jpg
+    caption: "Value collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel · name truncated in source catalog — confirm full finish name · source lists this under Value (20 Gauge Steel) — verify collection/material pairing"
+
+  - sku: CKT-CHANDLER-718-GOLD-SHADED
+    name: "Chandler/718 Gold Shaded…"
+    category: casket
+    collection: "Value"
+    price: 3595
+    image: assets/caskets/chandler-718-gold-shaded.jpg
+    caption: "Value collection — 20 Gauge Non-Gasketed"
+    notes: "20 Gauge Non-Gasketed · Steel · name truncated in source catalog — confirm full finish name · source lists this under Value (20 Gauge Steel) — verify collection/material pairing"
+
+  - sku: CKT-VALENCIA-EBONY
+    name: "Valencia Ebony"
+    category: casket
+    collection: "Value"
+    price: 3795
+    image: assets/caskets/valencia-ebony.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-VALENCIA-WHITE
+    name: "Valencia White"
+    category: casket
+    collection: "Value"
+    price: 3795
+    image: assets/caskets/valencia-white.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-VALENCIA-LIGHT-ORCHID
+    name: "Valencia Light Orchid"
+    category: casket
+    collection: "Value"
+    price: 3795
+    image: assets/caskets/valencia-light-orchid.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-VALENCIA-LONDON-BLUE
+    name: "Valencia London Blue"
+    category: casket
+    collection: "Value"
+    price: 3795
+    image: assets/caskets/valencia-london-blue.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-VALENCIA-SILVER
+    name: "Valencia Silver"
+    category: casket
+    collection: "Value"
+    price: 3795
+    image: assets/caskets/valencia-silver.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-VALENCIA-AUTUMN-HAZE
+    name: "Valencia Autumn Haze"
+    category: casket
+    collection: "Value"
+    price: 3795
+    image: assets/caskets/valencia-autumn-haze.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-JESSUP-RED
+    name: "Jessup Red"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/jessup-red.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-HEARTLAND-ROSE-ROSEBUD
+    name: "Heartland Rose Rosebud/…"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/heartland-rose-rosebud.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-JESSUP-WHITE-GOLD
+    name: "Jessup White/Gold"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/jessup-white-gold.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-JESSUP-WINEBERRY-SILVER
+    name: "Jessup Wineberry/Silver"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/jessup-wineberry-silver.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-COLEMAN-LIGHT-GUNMETAL
+    name: "Coleman Light Gunmetal"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/coleman-light-gunmetal.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-MERCURY-RUSSET-BRONZE
+    name: "Mercury Russet Bronze"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/mercury-russet-bronze.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-LASALLE-PURPLE-SILVER
+    name: "Lasalle Purple/Silver"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/lasalle-purple-silver.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-MERCURY-SILVER-EBONY
+    name: "Mercury Silver/Ebony"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/mercury-silver-ebony.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-MERCURY-BLUE-SPARKLE-SILVER
+    name: "Mercury Blue Sparkle/Silver"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/mercury-blue-sparkle-silver.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-JESSUP-COPPER-EBONY
+    name: "Jessup Copper/Ebony"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/jessup-copper-ebony.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-JESSUP-MONARCH-BLUE-SILVER
+    name: "Jessup Monarch Blue/Silver"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/jessup-monarch-blue-silver.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-SPENCER-DARK-GUNMETAL-H
+    name: "Spencer Dark Gunmetal H…"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/spencer-dark-gunmetal-h.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-JESSUP-SILVER-DARK-GUNME
+    name: "Jessup Silver/Dark Gunme…"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/jessup-silver-dark-gunme.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-JESSUP-ALMOND-GOLD
+    name: "Jessup Almond/Gold"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/jessup-almond-gold.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-JESSUP-WHITE-PINK
+    name: "Jessup White/Pink"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/jessup-white-pink.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-JESSUP-ORCHID-SILVER
+    name: "Jessup Orchid/Silver"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/jessup-orchid-silver.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-COLEMAN-SEAMIST
+    name: "Coleman Seamist"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/coleman-seamist.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-SPENCER-BRONZETONE
+    name: "Spencer Bronzetone"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/spencer-bronzetone.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-JESSUP-EBONY-GOLD
+    name: "Jessup Ebony/Gold"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/jessup-ebony-gold.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-JESSUP-SPRUCE-BLUE-SILVER
+    name: "Jessup Spruce Blue/Silver"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/jessup-spruce-blue-silver.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-JESSUP-HUNTER-GREEN-GOLD
+    name: "Jessup Hunter Green/Gold"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/jessup-hunter-green-gold.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-COLEMAN-OLIVE-BRONZE
+    name: "Coleman Olive Bronze"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/coleman-olive-bronze.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-DENNISON-645-WHITE-SILVE
+    name: "Dennison/645 White/Silve…"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/dennison-645-white-silve.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-DENNISON-645-MONARCH-BL
+    name: "Dennison/645 Monarch Bl…"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/dennison-645-monarch-bl.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-JESSUP-RUSSET-BRONZE-COP
+    name: "Jessup Russet Bronze/Cop…"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/jessup-russet-bronze-cop.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-COLEMAN-VENETIAN-BRONZE
+    name: "Coleman Venetian Bronze"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/coleman-venetian-bronze.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-DENNISON-645-SILVER-DARK
+    name: "Dennison/645 Silver/Dark …"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/dennison-645-silver-dark.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-DENNISON-645-COLONIAL-BRO
+    name: "Dennison/645 Colonial Bro…"
+    category: casket
+    collection: "Value"
+    price: 3895
+    image: assets/caskets/dennison-645-colonial-bro.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-FRESNO-VENETIAN-BRONZE
+    name: "Fresno Venetian Bronze & …"
+    category: casket
+    collection: "Value"
+    price: 3995
+    image: assets/caskets/fresno-venetian-bronze.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
+
+  - sku: CKT-WINGATE-STAR-WHITE
+    name: "Wingate Star White"
+    category: casket
+    collection: "Value"
+    price: 3995
+    image: assets/caskets/wingate-star-white.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-WINGATE-DAWN-GOLD
+    name: "Wingate Dawn Gold"
+    category: casket
+    collection: "Value"
+    price: 3995
+    image: assets/caskets/wingate-dawn-gold.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-WINGATE-WHITE-PINK
+    name: "Wingate White/Pink"
+    category: casket
+    collection: "Value"
+    price: 3995
+    image: assets/caskets/wingate-white-pink.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel"
+
+  - sku: CKT-WINGATE-MONARCH-BLUE-SPR
+    name: "Wingate Monarch Blue/Spr…"
+    category: casket
+    collection: "Value"
+    price: 3995
+    image: assets/caskets/wingate-monarch-blue-spr.jpg
+    caption: "Value collection — 20 Gauge"
+    notes: "20 Gauge · Steel · name truncated in source catalog — confirm full finish name"
