@@ -1,0 +1,62 @@
+# Tippecanoe Memory Gardens price book
+#
+# This is the single source of truth for quote pricing. Edit prices here and
+# every quote built afterwards picks them up. Ranges (low/high) are used where
+# the final figure depends on size, color, or lettering chosen at selection.
+#
+# NOTE: the entries below were seeded from the Schutz reference quote, which
+# only exercises five items. Replace this file with the full price book export
+# (YAML here, or point --price-book at a CSV exported from the spreadsheet).
+
+effective_date: "2026-01-01"
+currency: USD
+
+items:
+  # ---- Cremation vaults ----
+  - sku: VAULT-AEGEAN
+    name: Cremation Vault
+    collection: Aegean
+    category: vault
+    price_low: 1007
+    price_high: 1328
+    image: assets/products/aegean-cremation-vault.png
+    caption: Aegean cremation vault — shown in white marble finish
+    notes: Range reflects finish selection.
+
+  # ---- Cemetery services ----
+  - sku: SVC-OC-CREMATION
+    name: Open & Close
+    category: service
+    price: 995
+    taxable: false
+    notes: Cremation interment. Services are not subject to Indiana sales tax.
+
+  # ---- Bronze markers ----
+  - sku: MRK-BRONZE-CLASSIC
+    name: Bronze Headstone
+    collection: Classic
+    category: marker
+    price_low: 4407
+    price_high: 6276
+    image: assets/products/bronze-classic-marker.png
+    caption: Classic bronze marker — Display Memorials collection
+
+  - sku: MRK-CREM-BRONZE-CLASSIC
+    name: Cremation Headstone
+    collection: Classic
+    category: marker
+    price_low: 4193
+    price_high: 4992
+    image: assets/products/bronze-classic-marker.png
+    caption: Classic bronze marker — Display Memorials collection
+    notes: Combination marker and niche; no separate vault required.
+
+  # ---- Granite markers ----
+  - sku: MRK-GRANITE-HONOR
+    name: Granite Headstone
+    collection: Honor
+    category: marker
+    price_low: 4636
+    price_high: 5813
+    image: assets/products/granite-honor-marker.png
+    caption: “Honor” granite marker — Stories in Stone collection

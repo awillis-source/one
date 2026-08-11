@@ -1,0 +1,48 @@
+# Reference quote — reproduces the Schutz family cremation interment options.
+# Every priced line is a SKU from data/price_book.yaml; nothing is priced here.
+
+decedent: Carole Jeannette Schutz
+subtitle: Cremation Interment Options
+prepared_for: Jill Lang & Jan Richardson
+advisor: Alissa Willis, Family Service Advisor
+logo: assets/logo.png
+
+tax_rate: 7%
+apply_tax_to_totals: false   # the reference quote states tax in a footnote only
+
+options:
+  - title: Option 1 — Cremation Vault + Bronze Headstone
+    subtitle: Includes vault, open & close, and bronze marker
+    items:
+      - VAULT-AEGEAN
+      - SVC-OC-CREMATION
+      - MRK-BRONZE-CLASSIC
+
+  - title: Option 2 — Cremation Vault + Granite Headstone
+    subtitle: Includes vault, open & close, and granite marker
+    image_from: MRK-GRANITE-HONOR
+    items:
+      - VAULT-AEGEAN
+      - SVC-OC-CREMATION
+      - MRK-GRANITE-HONOR
+
+  - title: Option 3 — Cremation Headstone
+    subtitle: Combination marker & niche — no separate vault required
+    items:
+      - MRK-CREM-BRONZE-CLASSIC
+      - SVC-OC-CREMATION
+
+financing:
+  down_payment_percent: 12%
+  show_payment_table: false   # set true to print calculated monthly payments
+  plans:
+    - months: 12
+      apr: 0%
+    - months: 36
+      rate_label: Fixed Rate
+    - months: 60
+      apr: 8.90%
+  notes:
+    - Monthly payment amounts will be calculated once a final option and down
+      payment are confirmed.
+    - Cemetery and funeral balances, if applicable, are financed separately.

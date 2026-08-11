@@ -1,0 +1,273 @@
+/* Tippecanoe Memory Gardens quote sheet.
+   Geometry and palette are taken from the reference quote: US Letter,
+   0.75in side margins, a 154.8pt photo column beside a 327.6pt price table.
+   Sizes are in points so the screen preview matches the printed PDF. */
+
+:root {
+  --navy: #1f3a63;      /* headings, totals */
+  --accent: #345c9a;    /* rules, advisor line */
+  --muted: #5a6478;     /* italic subtitles and captions */
+  --ink: #1a1a1a;       /* body text */
+  --hairline: #b9c6dc;  /* table hairlines */
+  --tint: #dce6f5;      /* total row and callout fill */
+  --content-width: 504pt;
+  --photo-width: 154.8pt;
+  --table-width: 327.6pt;
+  --gutter: 21.6pt;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: var(--content-width);
+  font-family: "Liberation Serif", "Times New Roman", Times, serif;
+  font-size: 10pt;
+  line-height: 1.25;
+  color: var(--ink);
+  background: #fff;
+}
+
+.sheet {
+  width: var(--content-width);
+}
+
+.page-break {
+  break-before: page;
+  page-break-before: always;
+}
+
+/* ---- document heading ---- */
+
+.decedent {
+  margin: 0;
+  font-size: 15pt;
+  font-weight: bold;
+  color: var(--navy);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.header-line {
+  margin: 3pt 0 0;
+  font-size: 10pt;
+  font-style: italic;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ---- an option block ---- */
+
+.option {
+  margin-top: 17.2pt;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.option:first-of-type {
+  margin-top: 4.8pt;
+}
+
+.option-title {
+  margin: 0;
+  font-size: 12pt;
+  font-weight: bold;
+  color: var(--navy);
+  /* never leave a heading stranded at the foot of a page */
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.option-subtitle {
+  margin: 2pt 0 0;
+  font-size: 9pt;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.option-body {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gutter);
+  margin-top: 8pt;
+}
+
+.photo-col {
+  width: var(--photo-width);
+  flex: 0 0 var(--photo-width);
+}
+
+.photo {
+  display: block;
+  width: var(--photo-width);
+  height: auto;
+  border: 0.75pt solid var(--hairline);
+}
+
+.caption {
+  /* Captions may run past the photo into the gutter, as in the reference
+     quote, so a one-line caption stays on one line. */
+  width: calc(var(--photo-width) + var(--gutter));
+  margin: 3pt 0 0;
+  font-size: 7.5pt;
+  font-style: italic;
+  line-height: 1.2;
+  color: var(--muted);
+}
+
+/* ---- price table ---- */
+
+.prices {
+  width: var(--table-width);
+  flex: 0 0 var(--table-width);
+  border: 1pt solid var(--accent);
+  border-collapse: collapse;
+}
+
+.prices td {
+  height: 23pt;
+  padding: 4pt 8pt;
+  border-top: 0.5pt solid var(--hairline);
+  vertical-align: middle;
+}
+
+.prices tr:first-child td {
+  border-top: none;
+}
+
+.prices .desc {
+  text-align: left;
+}
+
+.prices .amount {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.prices .total td,
+.prices tr.total td {
+  background: var(--tint);
+  border-top: 0.5pt solid var(--accent);
+  font-weight: bold;
+  color: var(--navy);
+}
+
+.prices tr.head td {
+  font-size: 8.5pt;
+  font-variant: small-caps;
+  letter-spacing: 0.3pt;
+  color: var(--muted);
+}
+
+.payments {
+  width: var(--content-width);
+  flex: none;
+  margin-top: 6pt;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.payments .quoted-later {
+  font-style: italic;
+  color: var(--muted);
+  text-align: left;
+}
+
+.payments-basis {
+  width: auto;
+  margin-top: 4pt;
+}
+
+/* ---- footnotes ---- */
+
+.footnotes {
+  margin-top: 27.5pt;
+  padding-top: 3pt;
+  border-top: 0.75pt solid var(--hairline);
+}
+
+.footnotes p {
+  margin: 0 0 2pt;
+  font-size: 8pt;
+  color: var(--muted);
+}
+
+/* ---- payment options page ----
+   The reference quote sets this page a shade larger than the options page. */
+
+.pay .option-title {
+  font-size: 12.5pt;
+}
+
+.down-heading {
+  margin-top: 6.5pt;
+}
+
+.callout {
+  margin-top: 1.6pt;
+  padding: 5.5pt 10pt;
+  border: 1pt solid var(--accent);
+  background: var(--tint);
+  font-weight: bold;
+  font-size: 10.5pt;
+  color: var(--navy);
+}
+
+.plans-heading {
+  margin-top: 12pt;
+}
+
+.plan {
+  margin-top: 12.96pt;
+  padding: 7pt 10pt 12.9pt;
+  border: 1pt solid var(--accent);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.plans .plan:first-child {
+  margin-top: 18.5pt;
+}
+
+.notes {
+  margin-top: 12.1pt;
+}
+
+.notes p {
+  margin: 0 0 2pt;
+  font-size: 8.5pt;
+  color: var(--muted);
+}
+
+.plan-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.plan-label {
+  font-size: 11.5pt;
+  font-weight: bold;
+  color: var(--navy);
+}
+
+.plan-rate {
+  font-size: 11.5pt;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.plan-description {
+  margin: 5pt 0 0;
+  font-size: 9.3pt;
+  font-style: italic;
+  color: var(--muted);
+}

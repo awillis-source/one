@@ -1,0 +1,123 @@
+<title>{{ quote.decedent }} — Quote</title>
+<style>{{ css }}</style>
+
+<section class="sheet">
+  <h1 class="decedent">{{ quote.decedent }}</h1>
+  {% if quote.header_line %}
+  <p class="header-line">{{ quote.header_line }}</p>
+  {% endif %}
+
+  {% for option in quote.options %}
+  <section class="option">
+    <h2 class="option-title">{{ option.title }}</h2>
+    {% if option.subtitle %}
+    <p class="option-subtitle">{{ option.subtitle }}</p>
+    {% endif %}
+
+    <div class="option-body">
+      <div class="photo-col">
+        {% if option.image %}
+        <img class="photo" src="{{ images[option.image] }}" alt="">
+        {% if option.caption %}
+        <p class="caption">{{ option.caption }}</p>
+        {% endif %}
+        {% endif %}
+      </div>
+
+      <table class="prices">
+        {% for line in option.lines %}
+        <tr>
+          <td class="desc">{{ line.label }}</td>
+          <td class="amount">{{ line.extended | money }}</td>
+        </tr>
+        {% endfor %}
+        {% if quote.apply_tax_to_totals %}
+        <tr>
+          <td class="desc">Sales Tax ({{ tax_percent }}, merchandise only)</td>
+          <td class="amount">{{ option.tax(quote.tax_rate) | money }}</td>
+        </tr>
+        {% endif %}
+        <tr class="total">
+          <td class="desc">Estimated Total</td>
+          <td class="amount">
+            {{ (option.total_with_tax(quote.tax_rate) if quote.apply_tax_to_totals else option.total) | money }}
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+  {% endfor %}
+
+  {% if quote.footnotes %}
+  <div class="footnotes">
+    {% for note in quote.footnotes %}
+    <p>{{ note }}</p>
+    {% endfor %}
+  </div>
+  {% endif %}
+</section>
+
+{% if quote.financing %}
+<section class="sheet page-break pay">
+  <h1 class="decedent">{{ quote.decedent }}</h1>
+  <p class="header-line">Payment Options</p>
+
+  <h2 class="option-title down-heading">Down Payment</h2>
+  <div class="callout">{{ quote.financing.down_payment_note }}</div>
+
+  {% if quote.financing.plans %}
+  <h2 class="option-title plans-heading">Financing Plans</h2>
+  <div class="plans">
+    {% for plan in quote.financing.plans %}
+    <div class="plan">
+      <div class="plan-head">
+        <span class="plan-label">{{ plan.label }}</span>
+        <span class="plan-rate">{{ plan.display_rate }}</span>
+      </div>
+      {% if plan.description %}
+      <p class="plan-description">{{ plan.description }}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if schedules %}
+  {% for option, rows in schedules %}
+  <h2 class="option-title plans-heading">{{ option.title }}</h2>
+  <table class="prices payments">
+    <tr class="head">
+      <td class="desc">Plan</td>
+      <td class="amount">Down Payment</td>
+      <td class="amount">Amount Financed</td>
+      <td class="amount">Monthly</td>
+    </tr>
+    {% for row in rows %}
+    <tr>
+      <td class="desc">{{ row.plan.label }}{% if row.plan.display_rate %} — {{ row.plan.display_rate }}{% endif %}</td>
+      {% if row.quote %}
+      <td class="amount">${{ '{:,.2f}'.format(row.quote.down) }}</td>
+      <td class="amount">${{ '{:,.2f}'.format(row.quote.financed) }}</td>
+      <td class="amount">${{ '{:,.2f}'.format(row.monthly) }}</td>
+      {% else %}
+      <td class="amount quoted-later" colspan="3">Rate confirmed at signing</td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </table>
+  <p class="caption payments-basis">
+    Based on the low end of this option's estimated total
+    ({{ option.total | money }}).
+  </p>
+  {% endfor %}
+  {% endif %}
+
+  {% if quote.financing.notes %}
+  <div class="notes">
+    {% for note in quote.financing.notes %}
+    <p>{{ note }}</p>
+    {% endfor %}
+  </div>
+  {% endif %}
+</section>
+{% endif %}
