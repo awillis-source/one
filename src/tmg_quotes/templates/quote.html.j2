@@ -91,6 +91,9 @@
       <td class="amount">Down Payment</td>
       <td class="amount">Amount Financed</td>
       <td class="amount">Monthly</td>
+      {% if quote.financing.signing_date %}
+      <td class="amount">Paid In Full</td>
+      {% endif %}
     </tr>
     {% for row in rows %}
     <tr>
@@ -99,15 +102,30 @@
       <td class="amount">${{ '{:,.2f}'.format(row.quote.down) }}</td>
       <td class="amount">${{ '{:,.2f}'.format(row.quote.financed) }}</td>
       <td class="amount">${{ '{:,.2f}'.format(row.monthly) }}</td>
+      {% if quote.financing.signing_date %}
+      <td class="amount">{{ row.quote.final_payment.strftime('%b %-d, %Y') if row.quote.final_payment else '—' }}</td>
+      {% endif %}
       {% else %}
-      <td class="amount quoted-later" colspan="3">Rate confirmed at signing</td>
+      <td class="amount quoted-later" colspan="{{ 4 if quote.financing.signing_date else 3 }}">Rate confirmed at signing</td>
       {% endif %}
     </tr>
     {% endfor %}
   </table>
   <p class="caption payments-basis">
+    {% if option.total.is_range %}
     Based on the low end of this option's estimated total
     ({{ option.total | money }}).
+    {% else %}
+    Based on this option's total of {{ option.total | money }}.
+    {% endif %}
+    {% if quote.financing.signing_date %}
+    Installments begin one month after signing on
+    {{ quote.financing.signing_date.strftime('%B %-d, %Y') }}.
+    {% endif %}
+    {% if rows | selectattr('quote') | selectattr('quote.has_adjusted_final') | list %}
+    The final installment is adjusted to the cent so the payments total the
+    contract exactly.
+    {% endif %}
   </p>
   {% endfor %}
   {% endif %}

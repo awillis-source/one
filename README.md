@@ -155,6 +155,14 @@ that option's total. Plans with no APR keep printing "Rate confirmed at
 signing" rather than showing an invented figure. Omit `financing:` entirely and
 the payment page is left out.
 
+Add `signing_date: 2026-08-11` and the table gains a **Paid In Full** date per
+plan. Installments fall on the same day of the month, starting one month after
+signing, and a due date on the 31st moves to the last day of a shorter month.
+
+The last installment is adjusted to the cent so the payments total the contract
+exactly — level payments round, so twelve of $1,448.65 would otherwise overshoot
+a $17,383.78 balance by two cents.
+
 ## Layout
 
 Geometry is calibrated against the reference quote and asserted in

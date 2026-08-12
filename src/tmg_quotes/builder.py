@@ -8,6 +8,7 @@ never its price — that keeps quotes honest against the book.
 
 from __future__ import annotations
 
+from datetime import date, datetime
 from decimal import Decimal
 from pathlib import Path
 from typing import Optional
@@ -108,7 +109,7 @@ def _build_option(raw: object, book: PriceBook, index: int, where: str) -> Optio
         featured = next((l for l in lines if l.item.sku == feature_sku), None)
         if featured is None:
             raise QuoteSpecError(
-                f"{where}option {option!r}: image_from {feature_sku!r} is not one of "
+                f"{where}option {title!r}: image_from {feature_sku!r} is not one of "
                 "this option's items"
             )
         image = image or featured.item.image
@@ -220,7 +221,22 @@ def _build_financing(raw: object, where: str) -> Optional[Financing]:
         or f"{_percent_text(percent)} of contract total, due at signing",
         notes=[str(n) for n in (raw.get("notes") or [])],
         show_payment_table=bool(raw.get("show_payment_table", False)),
+        signing_date=_date(raw.get("signing_date"), f"{where}signing_date"),
     )
+
+
+def _date(value: object, label: str) -> Optional[date]:
+    """Read a YAML date (native, or an ISO string)."""
+    if value in (None, ""):
+        return None
+    if isinstance(value, datetime):
+        return value.date()
+    if isinstance(value, date):
+        return value
+    try:
+        return date.fromisoformat(str(value).strip())
+    except ValueError:
+        raise QuoteSpecError(f"{label}: not a date (use YYYY-MM-DD): {value!r}") from None
 
 
 def _default_plan_description(months: int) -> str:

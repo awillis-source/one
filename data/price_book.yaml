@@ -27,6 +27,15 @@ items:
     caption: Aegean cremation vault — shown in white marble finish
     notes: Range reflects finish selection.
 
+  - sku: VAULT-AEGEAN-BURIAL
+    name: Burial Vault
+    collection: Aegean
+    category: vault
+    price: 4367.65
+    image: assets/products/aegean-cremation-vault.png
+    caption: Aegean vault — shown in white marble finish
+    notes: Full-size burial vault. Price per Alissa Willis, 2026-08-11.
+
   # ---- Cemetery services ----
   - sku: SVC-OC-CREMATION
     name: Open & Close
@@ -34,6 +43,13 @@ items:
     price: 995
     taxable: false
     notes: Cremation interment. Services are not subject to Indiana sales tax.
+
+  - sku: SVC-OC-BURIAL
+    name: Open & Close
+    category: service
+    price: 1495
+    taxable: false
+    notes: Burial interment. Price per Alissa Willis, 2026-08-11.
 
   # ---- Bronze markers ----
   - sku: MRK-BRONZE-CLASSIC
@@ -44,6 +60,15 @@ items:
     price_high: 6276
     image: assets/products/bronze-classic-marker.png
     caption: Classic bronze marker — Display Memorials collection
+
+  - sku: MRK-BRONZE-COMPANION-CLASSIC
+    name: Companion Bronze Headstone
+    collection: Classic
+    category: marker
+    price: 8029
+    image: assets/products/bronze-classic-marker.png
+    caption: Classic bronze marker — Display Memorials collection
+    notes: Companion (two-name) marker. Price per Alissa Willis, 2026-08-11.
 
   - sku: MRK-CREM-BRONZE-CLASSIC
     name: Cremation Headstone

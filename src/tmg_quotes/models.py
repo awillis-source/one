@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
+from datetime import date
 from decimal import Decimal
 from typing import Optional
 
@@ -160,6 +161,9 @@ class Financing:
     down_payment_note: Optional[str] = None
     notes: list[str] = field(default_factory=list)
     show_payment_table: bool = False
+    # When set, the payment table prints due dates; the first installment
+    # falls one month after signing.
+    signing_date: Optional[date] = None
 
 
 @dataclass

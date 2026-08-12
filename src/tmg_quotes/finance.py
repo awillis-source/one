@@ -2,13 +2,34 @@
 
 from __future__ import annotations
 
+import calendar
 from dataclasses import dataclass
+from datetime import date
 from decimal import ROUND_HALF_UP, Decimal
 from typing import Optional
 
 from .models import Financing, FinancingPlan, Money
 
 CENTS = Decimal("0.01")
+
+
+def add_months(start: date, months: int) -> date:
+    """The same day of the month, `months` later.
+
+    A payment due on the 31st falls on the last day of a shorter month, which
+    is how installment due dates are normally read.
+    """
+    month_index = start.month - 1 + months
+    year = start.year + month_index // 12
+    month = month_index % 12 + 1
+    return date(year, month, min(start.day, calendar.monthrange(year, month)[1]))
+
+
+def installment_dates(signing: date, months: int) -> list[date]:
+    """Due dates for each installment, the first one month after signing."""
+    if months <= 0:
+        raise ValueError("months must be positive")
+    return [add_months(signing, n) for n in range(1, months + 1)]
 
 
 def round_money(amount: Decimal) -> Decimal:
@@ -39,6 +60,22 @@ def monthly_payment(principal: Decimal, annual_rate: Decimal, months: int) -> De
     return round_money(principal * monthly_rate * growth / (growth - 1))
 
 
+def final_installment(principal: Decimal, annual_rate: Decimal, months: int) -> Decimal:
+    """The last payment, which absorbs the rounding on all the others.
+
+    Level payments are rounded to the cent, so `monthly * months` rarely
+    matches the balance exactly. Amortizing month by month and clearing what
+    is left keeps the schedule adding up to the contract.
+    """
+    monthly = monthly_payment(principal, annual_rate, months)
+    balance = principal
+    monthly_rate = annual_rate / Decimal(12) if annual_rate else Decimal(0)
+    for _ in range(months - 1):
+        interest = round_money(balance * monthly_rate)
+        balance = round_money(balance + interest - monthly)
+    return round_money(balance + round_money(balance * monthly_rate))
+
+
 @dataclass(frozen=True)
 class PaymentQuote:
     """What one financing plan costs for one option's total."""
@@ -48,10 +85,18 @@ class PaymentQuote:
     down: Decimal
     financed: Decimal
     monthly: Decimal
+    final_monthly: Decimal
+    first_payment: Optional[date] = None
+    final_payment: Optional[date] = None
+
+    @property
+    def has_adjusted_final(self) -> bool:
+        return self.final_monthly != self.monthly
 
     @property
     def total_of_payments(self) -> Decimal:
-        return round_money(self.down + self.monthly * self.plan.months)
+        installments = self.monthly * (self.plan.months - 1) + self.final_monthly
+        return round_money(self.down + installments)
 
     @property
     def finance_charge(self) -> Decimal:
@@ -71,12 +116,20 @@ def payment_quote(
         return None
     down = down_payment(total, financing.down_payment_percent)
     financed = round_money(total - down)
+    schedule = (
+        installment_dates(financing.signing_date, plan.months)
+        if financing.signing_date
+        else []
+    )
     return PaymentQuote(
         plan=plan,
         contract_total=round_money(total),
         down=down,
         financed=financed,
         monthly=monthly_payment(financed, plan.apr, plan.months),
+        final_monthly=final_installment(financed, plan.apr, plan.months),
+        first_payment=schedule[0] if schedule else None,
+        final_payment=schedule[-1] if schedule else None,
     )
 
 

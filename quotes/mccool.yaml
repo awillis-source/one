@@ -1,0 +1,41 @@
+# McCool family — cemetery merchandise and services.
+# Two full-size burial vaults, a companion bronze marker, two open & closes.
+
+decedent: McCool Family
+subtitle: Cemetery Merchandise & Services
+advisor: Alissa Willis, Family Service Advisor
+logo: assets/logo.png
+
+tax_rate: 7%
+apply_tax_to_totals: false
+
+options:
+  - title: Cemetery Merchandise & Services
+    subtitle: Two burial vaults, companion bronze marker, and interment services
+    image_from: MRK-BRONZE-COMPANION-CLASSIC
+    items:
+      - sku: VAULT-AEGEAN-BURIAL
+        quantity: 2
+      - sku: MRK-BRONZE-COMPANION-CLASSIC
+      - sku: SVC-OC-BURIAL
+        quantity: 2
+
+footnotes:
+  - Photos shown reflect the specific vault and marker collections priced above;
+    individual colors, wording, and artwork are customized at selection.
+  - Cemetery merchandise and services are billed separately from funeral home
+    charges. Indiana sales tax of 7% applies to merchandise only.
+
+financing:
+  down_payment_percent: 12%
+  show_payment_table: true
+  signing_date: 2026-08-11
+  plans:
+    - months: 12
+      apr: 0%
+    - months: 36
+      rate_label: Fixed Rate
+    - months: 60
+      apr: 8.90%
+  notes:
+    - Cemetery and funeral balances, if applicable, are financed separately.
