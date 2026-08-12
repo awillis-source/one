@@ -39,15 +39,18 @@ def test_html_is_self_contained(quote):
     assert "Estimated Total" in html
 
 
-def test_html_shows_calculated_payments_when_asked(quote):
-    quote.financing.show_payment_table = True
+def test_html_shows_a_payment_breakdown_when_asked(quote):
+    quote.financing.show_payment_breakdown = True
     try:
         html = render_html(quote, base_dir=REPO)
     finally:
-        quote.financing.show_payment_table = False
-    assert "Monthly" in html
+        quote.financing.show_payment_breakdown = False
+    assert "Down payment" in html
+    assert "Amount financed" in html
+    assert "Total of payments" in html
     assert "$769.08" in html  # 12% down on option 1's low total
-    assert "Rate confirmed at signing" in html  # the fixed-rate plan
+    # The fixed-rate plan still shows what is known, and no invented payment.
+    assert "rate set at signing" in html
 
 
 def test_pdf_has_the_expected_pages(rendered):

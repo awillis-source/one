@@ -88,7 +88,7 @@ def render_html(quote: Quote, *, base_dir: Optional[Path] = None) -> str:
             images[option.image] = data_uri(option.image, base_dir=base_dir)
 
     schedules = None
-    if quote.financing and quote.financing.show_payment_table:
+    if quote.financing and quote.financing.show_payment_breakdown:
         schedules = [
             (option, payment_schedule(option.total, quote.financing))
             for option in quote.options

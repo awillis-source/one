@@ -86,12 +86,31 @@ class PaymentQuote:
     financed: Decimal
     monthly: Decimal
     final_monthly: Decimal
-    first_payment: Optional[date] = None
-    final_payment: Optional[date] = None
+    schedule: tuple[date, ...] = ()
 
     @property
     def has_adjusted_final(self) -> bool:
         return self.final_monthly != self.monthly
+
+    @property
+    def level_count(self) -> int:
+        """How many installments are at the level amount."""
+        return self.plan.months - 1 if self.has_adjusted_final else self.plan.months
+
+    @property
+    def first_payment(self) -> Optional[date]:
+        return self.schedule[0] if self.schedule else None
+
+    @property
+    def final_payment(self) -> Optional[date]:
+        return self.schedule[-1] if self.schedule else None
+
+    @property
+    def last_level_payment(self) -> Optional[date]:
+        """Due date of the last installment before an adjusted final one."""
+        if not self.schedule:
+            return None
+        return self.schedule[self.level_count - 1]
 
     @property
     def total_of_payments(self) -> Decimal:
@@ -128,8 +147,7 @@ def payment_quote(
         financed=financed,
         monthly=monthly_payment(financed, plan.apr, plan.months),
         final_monthly=final_installment(financed, plan.apr, plan.months),
-        first_payment=schedule[0] if schedule else None,
-        final_payment=schedule[-1] if schedule else None,
+        schedule=tuple(schedule),
     )
 
 
@@ -139,6 +157,11 @@ def payment_schedule(total: Money, financing: Financing) -> list[dict]:
     Ranged totals are shown "from" the low end, which is how the low figure is
     used everywhere else on the quote.
     """
+    # The down payment and financed balance do not depend on the rate, so a
+    # plan with no APR on file still shows those two figures.
+    down = down_payment(total.low, financing.down_payment_percent)
+    financed = round_money(total.low - down)
+
     rows = []
     for plan in financing.plans:
         quote = payment_quote(total.low, financing, plan)
@@ -147,6 +170,8 @@ def payment_schedule(total: Money, financing: Financing) -> list[dict]:
                 "plan": plan,
                 "quote": quote,
                 "monthly": quote.monthly if quote else None,
+                "down": down,
+                "financed": financed,
             }
         )
     return rows

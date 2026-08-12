@@ -167,23 +167,65 @@ body {
   color: var(--muted);
 }
 
-.payments {
+/* ---- per-plan payment breakdown ---- */
+
+.breakdown {
   width: var(--content-width);
-  flex: none;
-  margin-top: 6pt;
+  margin-top: 10pt;
+  padding: 7pt 10pt 8pt;
+  border: 1pt solid var(--accent);
   break-inside: avoid;
   page-break-inside: avoid;
 }
 
-.payments .quoted-later {
-  font-style: italic;
-  color: var(--muted);
+.ledger {
+  width: 100%;
+  margin-top: 5pt;
+  border-collapse: collapse;
+}
+
+.ledger td {
+  padding: 2.5pt 0;
+  border: none;
+  vertical-align: baseline;
+}
+
+.ledger .desc {
+  width: 44%;
   text-align: left;
 }
 
-.payments-basis {
-  width: auto;
-  margin-top: 4pt;
+.ledger .amount {
+  width: 20%;
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 12pt;
+}
+
+.ledger .when {
+  width: 36%;
+  text-align: left;
+  font-size: 8.5pt;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.ledger .ledger-total td {
+  padding-top: 5pt;
+  border-top: 0.5pt solid var(--hairline);
+  font-weight: bold;
+  color: var(--navy);
+}
+
+.ledger .ledger-total .when {
+  font-weight: normal;
+  color: var(--muted);
+}
+
+.ledger .quoted-later {
+  font-style: italic;
+  font-weight: normal;
+  color: var(--muted);
 }
 
 /* ---- footnotes ---- */

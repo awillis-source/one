@@ -160,10 +160,15 @@ class Financing:
     plans: list[FinancingPlan] = field(default_factory=list)
     down_payment_note: Optional[str] = None
     notes: list[str] = field(default_factory=list)
-    show_payment_table: bool = False
-    # When set, the payment table prints due dates; the first installment
-    # falls one month after signing.
+    show_payment_breakdown: bool = False
+    # When set, the breakdown prints due dates; the first installment falls
+    # one month after signing.
     signing_date: Optional[date] = None
+
+    @property
+    def show_payment_table(self) -> bool:
+        """Kept for callers using the older name."""
+        return self.show_payment_breakdown
 
 
 @dataclass

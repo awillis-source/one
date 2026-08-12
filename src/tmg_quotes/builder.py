@@ -220,7 +220,9 @@ def _build_financing(raw: object, where: str) -> Optional[Financing]:
         down_payment_note=_opt_str(raw.get("down_payment_note"))
         or f"{_percent_text(percent)} of contract total, due at signing",
         notes=[str(n) for n in (raw.get("notes") or [])],
-        show_payment_table=bool(raw.get("show_payment_table", False)),
+        show_payment_breakdown=bool(
+            raw.get("show_payment_breakdown", raw.get("show_payment_table", False))
+        ),
         signing_date=_date(raw.get("signing_date"), f"{where}signing_date"),
     )
 

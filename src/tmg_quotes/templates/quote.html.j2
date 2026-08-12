@@ -65,7 +65,9 @@
   <h2 class="option-title down-heading">Down Payment</h2>
   <div class="callout">{{ quote.financing.down_payment_note }}</div>
 
-  {% if quote.financing.plans %}
+  {# With a per-option breakdown below, these summary cards would just repeat
+     the same plans, so they are shown only when there is no breakdown. #}
+  {% if quote.financing.plans and not schedules %}
   <h2 class="option-title plans-heading">Financing Plans</h2>
   <div class="plans">
     {% for plan in quote.financing.plans %}
@@ -85,48 +87,70 @@
   {% if schedules %}
   {% for option, rows in schedules %}
   <h2 class="option-title plans-heading">{{ option.title }}</h2>
-  <table class="prices payments">
-    <tr class="head">
-      <td class="desc">Plan</td>
-      <td class="amount">Down Payment</td>
-      <td class="amount">Amount Financed</td>
-      <td class="amount">Monthly</td>
-      {% if quote.financing.signing_date %}
-      <td class="amount">Paid In Full</td>
-      {% endif %}
-    </tr>
-    {% for row in rows %}
-    <tr>
-      <td class="desc">{{ row.plan.label }}{% if row.plan.display_rate %} — {{ row.plan.display_rate }}{% endif %}</td>
-      {% if row.quote %}
-      <td class="amount">${{ '{:,.2f}'.format(row.quote.down) }}</td>
-      <td class="amount">${{ '{:,.2f}'.format(row.quote.financed) }}</td>
-      <td class="amount">${{ '{:,.2f}'.format(row.monthly) }}</td>
-      {% if quote.financing.signing_date %}
-      <td class="amount">{{ row.quote.final_payment.strftime('%b %-d, %Y') if row.quote.final_payment else '—' }}</td>
-      {% endif %}
-      {% else %}
-      <td class="amount quoted-later" colspan="{{ 4 if quote.financing.signing_date else 3 }}">Rate confirmed at signing</td>
-      {% endif %}
-    </tr>
-    {% endfor %}
-  </table>
-  <p class="caption payments-basis">
+  <p class="option-subtitle">
     {% if option.total.is_range %}
-    Based on the low end of this option's estimated total
-    ({{ option.total | money }}).
+    Figured on the low end of this option's estimated total, {{ option.total | money }}.
     {% else %}
-    Based on this option's total of {{ option.total | money }}.
-    {% endif %}
-    {% if quote.financing.signing_date %}
-    Installments begin one month after signing on
-    {{ quote.financing.signing_date.strftime('%B %-d, %Y') }}.
-    {% endif %}
-    {% if rows | selectattr('quote') | selectattr('quote.has_adjusted_final') | list %}
-    The final installment is adjusted to the cent so the payments total the
-    contract exactly.
+    Figured on this option's total of {{ option.total | money }}.
     {% endif %}
   </p>
+
+  {% for row in rows %}
+  <div class="breakdown">
+    <div class="plan-head">
+      <span class="plan-label">{{ row.plan.label }}</span>
+      <span class="plan-rate">{{ row.plan.display_rate }}</span>
+    </div>
+    <table class="ledger">
+      <tr>
+        <td class="desc">Down payment</td>
+        <td class="amount">${{ '{:,.2f}'.format(row.down) }}</td>
+        <td class="when">
+          due at signing{% if quote.financing.signing_date %},
+          {{ quote.financing.signing_date.strftime('%b %-d, %Y') }}{% endif %}
+        </td>
+      </tr>
+      <tr>
+        <td class="desc">Amount financed</td>
+        <td class="amount">${{ '{:,.2f}'.format(row.financed) }}</td>
+        <td class="when"></td>
+      </tr>
+      {% if row.quote %}
+      <tr>
+        <td class="desc">{{ row.quote.level_count }} monthly payment{{ '' if row.quote.level_count == 1 else 's' }} of</td>
+        <td class="amount">${{ '{:,.2f}'.format(row.quote.monthly) }}</td>
+        <td class="when">
+          {% if row.quote.first_payment %}
+          {{ row.quote.first_payment.strftime('%b %-d, %Y') }}{% if row.quote.level_count > 1 %} – {{ row.quote.last_level_payment.strftime('%b %-d, %Y') }}{% endif %}
+          {% endif %}
+        </td>
+      </tr>
+      {% if row.quote.has_adjusted_final %}
+      <tr>
+        <td class="desc">Final payment</td>
+        <td class="amount">${{ '{:,.2f}'.format(row.quote.final_monthly) }}</td>
+        <td class="when">
+          {% if row.quote.final_payment %}{{ row.quote.final_payment.strftime('%b %-d, %Y') }} — {% endif %}adjusted to clear the balance
+        </td>
+      </tr>
+      {% endif %}
+      <tr class="ledger-total">
+        <td class="desc">Total of payments</td>
+        <td class="amount">${{ '{:,.2f}'.format(row.quote.total_of_payments) }}</td>
+        <td class="when">
+          {% if row.quote.finance_charge > 0 %}includes ${{ '{:,.2f}'.format(row.quote.finance_charge) }} in finance charges{% else %}no finance charge{% endif %}{% if row.quote.final_payment %}, paid in full {{ row.quote.final_payment.strftime('%b %-d, %Y') }}{% endif %}
+        </td>
+      </tr>
+      {% else %}
+      <tr class="ledger-total">
+        <td class="desc">{{ row.plan.months }} monthly payments of</td>
+        <td class="amount quoted-later">rate set at signing</td>
+        <td class="when">first payment one month after signing</td>
+      </tr>
+      {% endif %}
+    </table>
+  </div>
+  {% endfor %}
   {% endfor %}
   {% endif %}
 

@@ -139,7 +139,8 @@ The `financing:` block prints the second page:
 ```yaml
 financing:
   down_payment_percent: 12%
-  show_payment_table: false
+  show_payment_breakdown: false
+  signing_date: 2026-08-11
   plans:
     - months: 12
       apr: 0%
@@ -149,19 +150,25 @@ financing:
       apr: 8.90%
 ```
 
-With `show_payment_table: true`, each option gets a table of down payment,
-amount financed, and monthly payment per plan, amortized from the low end of
-that option's total. Plans with no APR keep printing "Rate confirmed at
-signing" rather than showing an invented figure. Omit `financing:` entirely and
-the payment page is left out.
+With `show_payment_breakdown: true`, each option gets a block per plan showing
+down payment, amount financed, the monthly payments, the final payment, and the
+total of payments with any finance charge — figured from the low end of that
+option's total. The generic plan cards are dropped when a breakdown is present,
+since they would only repeat it. Omit `financing:` entirely and the payment page
+is left out.
 
-Add `signing_date: 2026-08-11` and the table gains a **Paid In Full** date per
-plan. Installments fall on the same day of the month, starting one month after
+Add `signing_date: 2026-08-11` and every line gains a date: when the down
+payment is due, the span the monthly payments cover, and when it is paid in
+full. Installments fall on the same day of each month starting one month after
 signing, and a due date on the 31st moves to the last day of a shorter month.
+
+Plans with no APR on file still show their down payment and amount financed,
+then say the rate is set at signing rather than printing an invented payment.
 
 The last installment is adjusted to the cent so the payments total the contract
 exactly — level payments round, so twelve of $1,448.65 would otherwise overshoot
-a $17,383.78 balance by two cents.
+a $17,383.78 balance by two cents. When the balance divides evenly, every
+payment is the same and no adjusted final line appears.
 
 ## Layout
 
