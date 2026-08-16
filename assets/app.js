@@ -45,6 +45,10 @@
     return {
       version: 1,
       settings: {
+        /* 'light' | 'dark' | 'system'. Light by default — following the
+         * device meant the app changed colour when it moved to a machine set
+         * to dark, which reads as a fault rather than a preference. */
+        theme: 'light',
         roleId: 'sales_counselor',
         location: '',
         /* Heritage Certificate value for this location — the threshold a
@@ -203,6 +207,29 @@
     }
 
     box.innerHTML = out;
+  }
+
+  /* ---------------------------------------------------------------- *
+   * Appearance
+   * ---------------------------------------------------------------- */
+
+  var darkQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+  function applyTheme() {
+    var choice = state.settings.theme || 'light';
+    var dark = choice === 'dark' || (choice === 'system' && darkQuery && darkQuery.matches);
+    if (dark) {
+      document.documentElement.setAttribute('data-app-theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-app-theme');
+    }
+  }
+
+  function watchSystemTheme() {
+    if (!darkQuery) { return; }
+    var onChange = function () { if (state.settings.theme === 'system') { applyTheme(); } };
+    if (darkQuery.addEventListener) { darkQuery.addEventListener('change', onChange); }
+    else if (darkQuery.addListener) { darkQuery.addListener(onChange); }
   }
 
   function isStandalone() {
@@ -855,6 +882,9 @@
     });
 
     // Settings
+    applyTheme();
+    watchSystemTheme();
+    $('sTheme').value = state.settings.theme || 'light';
     $('sRole').value = state.settings.roleId;
     $('sLocation').value = state.settings.location || '';
     $('sHeritage').value = state.settings.heritageCertificateValue || '';
@@ -992,8 +1022,10 @@
       if (e.key === 'Escape' && !$('drawer').hidden) { openDrawer(false); }
     });
 
-    ['sRole', 'sLocation', 'sHeritage', 'sTraining'].forEach(function (id) {
+    ['sTheme', 'sRole', 'sLocation', 'sHeritage', 'sTraining'].forEach(function (id) {
       $(id).addEventListener('input', function () {
+        state.settings.theme = $('sTheme').value;
+        applyTheme();
         state.settings.roleId = $('sRole').value;
         state.settings.location = $('sLocation').value;
         state.settings.heritageCertificateValue = $('sHeritage').value;
@@ -1017,7 +1049,9 @@
               parsed.sales.length + ' sale(s) in this backup?')) { return; }
           state = Object.assign(defaultState(), parsed);
           state.settings = mergeSettings(parsed.settings);
+          applyTheme();
           writeForm(state.draft || { category: state.category, date: todayIso() });
+          $('sTheme').value = state.settings.theme || 'light';
           $('sRole').value = state.settings.roleId;
           $('sLocation').value = state.settings.location || '';
           $('sHeritage').value = state.settings.heritageCertificateValue || '';
@@ -1072,6 +1106,8 @@
         if (!incoming || !Array.isArray(incoming.sales)) { return; }
         state.sales = incoming.sales;
         state.settings = mergeSettings(incoming.settings);
+        applyTheme();
+        $('sTheme').value = state.settings.theme || 'light';
         $('sRole').value = state.settings.roleId;
         $('sLocation').value = state.settings.location || '';
         $('sHeritage').value = state.settings.heritageCertificateValue || '';

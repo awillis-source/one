@@ -26,41 +26,15 @@
 }
 
 /*
- * Dark palette, declared twice on purpose.
+ * Dark palette.
  *
- * A host can leave the theme to the OS (nothing stamped on :root) or stamp an
- * explicit data-theme. The media query covers the unstamped case but must not
- * override an explicit light choice on a dark OS; the attribute rule covers an
- * explicit dark choice on a light OS. Only tokens are redefined — no component
- * takes a color from inside either block, or it would go undefined in the
- * state the block doesn't match.
- *
- * Keep the two blocks identical.
+ * The app's own Appearance setting decides the theme, not the device and not
+ * the page host — so this hangs off `data-app-theme`, an attribute nothing
+ * else writes. "Match my device" is resolved in JS and stamped here too, so
+ * this stays the single dark definition. Light above is the default, which is
+ * also what renders before any script runs.
  */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0b1120;
-    --surface: #111c33;
-    --surface-2: #16233d;
-    --border: #23324f;
-    --border-strong: #334565;
-    --text: #e8edf7;
-    --text-dim: #94a3b8;
-    --text-faint: #64748b;
-    --accent: #60a5fa;
-    --accent-soft: #1e3a8a;
-    --on-accent: #0b1120;
-    --good: #34d399;
-    --good-soft: #064e3b;
-    --warn: #fbbf24;
-    --warn-soft: #4a3208;
-    --bad: #f87171;
-    --bad-soft: #4c1d1d;
-    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 4px 16px rgba(0, 0, 0, .3);
-  }
-}
-
-:root[data-theme="dark"] {
+:root[data-app-theme="dark"] {
   --bg: #0b1120;
   --surface: #111c33;
   --surface-2: #16233d;

@@ -35,41 +35,15 @@
 }
 
 /*
- * Dark palette, declared twice on purpose.
+ * Dark palette.
  *
- * A host can leave the theme to the OS (nothing stamped on :root) or stamp an
- * explicit data-theme. The media query covers the unstamped case but must not
- * override an explicit light choice on a dark OS; the attribute rule covers an
- * explicit dark choice on a light OS. Only tokens are redefined — no component
- * takes a color from inside either block, or it would go undefined in the
- * state the block doesn't match.
- *
- * Keep the two blocks identical.
+ * The app's own Appearance setting decides the theme, not the device and not
+ * the page host — so this hangs off `data-app-theme`, an attribute nothing
+ * else writes. "Match my device" is resolved in JS and stamped here too, so
+ * this stays the single dark definition. Light above is the default, which is
+ * also what renders before any script runs.
  */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0b1120;
-    --surface: #111c33;
-    --surface-2: #16233d;
-    --border: #23324f;
-    --border-strong: #334565;
-    --text: #e8edf7;
-    --text-dim: #94a3b8;
-    --text-faint: #64748b;
-    --accent: #60a5fa;
-    --accent-soft: #1e3a8a;
-    --on-accent: #0b1120;
-    --good: #34d399;
-    --good-soft: #064e3b;
-    --warn: #fbbf24;
-    --warn-soft: #4a3208;
-    --bad: #f87171;
-    --bad-soft: #4c1d1d;
-    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 4px 16px rgba(0, 0, 0, .3);
-  }
-}
-
-:root[data-theme="dark"] {
+:root[data-app-theme="dark"] {
   --bg: #0b1120;
   --surface: #111c33;
   --surface-2: #16233d;
@@ -864,6 +838,15 @@ table.ref tbody tr:hover { background: var(--surface-2); }
     <button type="button" class="icon-btn" id="closeDrawer" aria-label="Close settings">Close</button>
   </div>
   <div class="drawer-body">
+    <label class="field">
+      <span>Appearance</span>
+      <select id="sTheme">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="system">Match my device</option>
+      </select>
+    </label>
+
     <label class="field">
       <span>Your role</span>
       <select id="sRole"></select>
@@ -1955,6 +1938,10 @@ table.ref tbody tr:hover { background: var(--surface-2); }
     return {
       version: 1,
       settings: {
+        /* 'light' | 'dark' | 'system'. Light by default — following the
+         * device meant the app changed colour when it moved to a machine set
+         * to dark, which reads as a fault rather than a preference. */
+        theme: 'light',
         roleId: 'sales_counselor',
         location: '',
         /* Heritage Certificate value for this location — the threshold a
@@ -2113,6 +2100,29 @@ table.ref tbody tr:hover { background: var(--surface-2); }
     }
 
     box.innerHTML = out;
+  }
+
+  /* ---------------------------------------------------------------- *
+   * Appearance
+   * ---------------------------------------------------------------- */
+
+  var darkQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+  function applyTheme() {
+    var choice = state.settings.theme || 'light';
+    var dark = choice === 'dark' || (choice === 'system' && darkQuery && darkQuery.matches);
+    if (dark) {
+      document.documentElement.setAttribute('data-app-theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-app-theme');
+    }
+  }
+
+  function watchSystemTheme() {
+    if (!darkQuery) { return; }
+    var onChange = function () { if (state.settings.theme === 'system') { applyTheme(); } };
+    if (darkQuery.addEventListener) { darkQuery.addEventListener('change', onChange); }
+    else if (darkQuery.addListener) { darkQuery.addListener(onChange); }
   }
 
   function isStandalone() {
@@ -2765,6 +2775,9 @@ table.ref tbody tr:hover { background: var(--surface-2); }
     });
 
     // Settings
+    applyTheme();
+    watchSystemTheme();
+    $('sTheme').value = state.settings.theme || 'light';
     $('sRole').value = state.settings.roleId;
     $('sLocation').value = state.settings.location || '';
     $('sHeritage').value = state.settings.heritageCertificateValue || '';
@@ -2902,8 +2915,10 @@ table.ref tbody tr:hover { background: var(--surface-2); }
       if (e.key === 'Escape' && !$('drawer').hidden) { openDrawer(false); }
     });
 
-    ['sRole', 'sLocation', 'sHeritage', 'sTraining'].forEach(function (id) {
+    ['sTheme', 'sRole', 'sLocation', 'sHeritage', 'sTraining'].forEach(function (id) {
       $(id).addEventListener('input', function () {
+        state.settings.theme = $('sTheme').value;
+        applyTheme();
         state.settings.roleId = $('sRole').value;
         state.settings.location = $('sLocation').value;
         state.settings.heritageCertificateValue = $('sHeritage').value;
@@ -2927,7 +2942,9 @@ table.ref tbody tr:hover { background: var(--surface-2); }
               parsed.sales.length + ' sale(s) in this backup?')) { return; }
           state = Object.assign(defaultState(), parsed);
           state.settings = mergeSettings(parsed.settings);
+          applyTheme();
           writeForm(state.draft || { category: state.category, date: todayIso() });
+          $('sTheme').value = state.settings.theme || 'light';
           $('sRole').value = state.settings.roleId;
           $('sLocation').value = state.settings.location || '';
           $('sHeritage').value = state.settings.heritageCertificateValue || '';
@@ -2982,6 +2999,8 @@ table.ref tbody tr:hover { background: var(--surface-2); }
         if (!incoming || !Array.isArray(incoming.sales)) { return; }
         state.sales = incoming.sales;
         state.settings = mergeSettings(incoming.settings);
+        applyTheme();
+        $('sTheme').value = state.settings.theme || 'light';
         $('sRole').value = state.settings.roleId;
         $('sLocation').value = state.settings.location || '';
         $('sHeritage').value = state.settings.heritageCertificateValue || '';

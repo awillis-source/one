@@ -81,6 +81,10 @@ The Heritage Certificate value defaults to **$1,195**, the threshold a preneed
 right of burial must reach to earn the land sale bonus. Change it under
 Settings if your location's differs.
 
+**Appearance** is light by default and set under Settings — Light, Dark, or
+Match my device. It does not follow the computer's dark mode unless you pick
+"Match my device", so the app looks the same on every machine you open it on.
+
 **Splits** — enter your share as a percentage. The contract's full commission
 and your share are both shown and both exported.
 
