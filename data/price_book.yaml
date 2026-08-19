@@ -36,6 +36,16 @@ items:
     caption: Aegean vault — shown in white marble finish
     notes: Full-size burial vault. Price per Alissa Willis, 2026-08-11.
 
+  # ---- Interment rights ----
+  - sku: RIGHT-2ND
+    name: Second Right of Interment
+    category: property
+    price: 1295
+    taxable: false
+    notes: >-
+      Second interment right in an existing space. Price per Alissa Willis,
+      2026-08-11. Interment rights are not merchandise, so no sales tax.
+
   # ---- Cemetery services ----
   - sku: SVC-OC-CREMATION
     name: Open & Close
@@ -43,6 +53,15 @@ items:
     price: 995
     taxable: false
     notes: Cremation interment. Services are not subject to Indiana sales tax.
+
+  - sku: SVC-OC-SECOND-RIGHT
+    name: Open & Close
+    category: service
+    price: 695
+    taxable: false
+    notes: >-
+      Second right interment. Price per Alissa Willis, 2026-08-11 — confirm
+      which service this rate covers before reusing it.
 
   - sku: SVC-OC-BURIAL
     name: Open & Close
@@ -69,6 +88,17 @@ items:
     image: assets/products/bronze-classic-marker.png
     caption: Classic bronze marker — Display Memorials collection
     notes: Companion (two-name) marker. Price per Alissa Willis, 2026-08-11.
+
+  - sku: MRK-VAULTED-HEADSTONE
+    name: Vaulted Headstone
+    category: marker
+    price: 4193.25
+    image: assets/products/bronze-classic-marker.png
+    caption: Vaulted headstone — headstone and vault in one
+    notes: >-
+      Price per Alissa Willis, 2026-08-11. Close to the low end of
+      MRK-CREM-BRONZE-CLASSIC ($4,193) — confirm whether these are the same
+      item before quoting both.
 
   - sku: MRK-CREM-BRONZE-CLASSIC
     name: Cremation Headstone

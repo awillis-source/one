@@ -1,0 +1,40 @@
+# Matthew Haynes — second right interment with a vaulted headstone.
+# Prepared for Mark Haynes.
+
+decedent: Matthew Haynes
+subtitle: Cemetery Merchandise & Services
+prepared_for: Mark Haynes
+advisor: Alissa Willis, Family Service Advisor
+logo: assets/logo.png
+
+tax_rate: 7%
+apply_tax_to_totals: false
+
+options:
+  - title: Second Right Interment with Vaulted Headstone
+    subtitle: Includes the second right of interment, vaulted headstone, and open & close
+    image_from: MRK-VAULTED-HEADSTONE
+    items:
+      - RIGHT-2ND
+      - MRK-VAULTED-HEADSTONE
+      - SVC-OC-SECOND-RIGHT
+
+footnotes:
+  - Photo shown reflects the vaulted headstone priced above; colors, wording,
+    and artwork are customized at selection.
+  - Cemetery merchandise and services are billed separately from funeral home
+    charges. Indiana sales tax of 7% applies to merchandise only.
+
+financing:
+  down_payment_percent: 12%
+  show_payment_breakdown: true
+  signing_date: 2026-08-11
+  plans:
+    - months: 12
+      apr: 0%
+    - months: 36
+      rate_label: Fixed Rate
+    - months: 60
+      apr: 8.90%
+  notes:
+    - Cemetery and funeral balances, if applicable, are financed separately.
